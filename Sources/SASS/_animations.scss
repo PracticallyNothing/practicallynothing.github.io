@@ -1,0 +1,19 @@
+@keyframes slidein-left {
+	0%   { opacity: 0;   transform: translateX(150%); }
+	100% { opacity: 100; transform: translateX(0);    }
+}
+
+@keyframes slideout-left {
+	0%   { opacity: 100; transform: translateX(0);    }
+	100% { opacity: 0;   transform: translateX(150%); }
+}
+
+@keyframes slidein-right {
+	0%   { opacity: 0;   transform: translateX(150%); }
+	100% { opacity: 100; transform: translateX(0);    }
+}
+
+@keyframes slideout-right {
+	0%   { opacity: 100; transform: translateX(0);     }
+	100% { opacity: 0;   transform: translateX(-150%); }
+}
