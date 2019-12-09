@@ -86,7 +86,6 @@ body {
 
 	h1 { 
 		grid-area: title;
-		margin-top: 0;
 		font-size: 35pt;
 	}
 
@@ -97,11 +96,6 @@ body {
 
 	a {
 		grid-area: link;
-		@include on-phone {
-			width: 80vw;
-			margin: 0 auto;
-			display: block;
-		}
 		display: inline-block;
 
 		background: $bg-2;
@@ -139,28 +133,50 @@ body {
 	}
 }
 
-.gallery {
+#why-choose-us {
 	display: grid;
-
+	background: $bg-1;
+	color: white;
 	grid-template-areas:
-	"img img img"
-	"img img img"
-	"img img img";
+	"title title title"
+	"reason-1 reason-2 reason-3"
+	"reason-4 reason-5 reason-6";
+	text-align: center;
 
-	@include on-phone {
+	@media screen and (max-width: 1024px) {
 		grid-template-areas:
-		"img"
-		"img"
-		"img"
-		"img"
-		"img"
-		"img"
-		"img"
-		"img"
-		"img";
+		"title"
+		"reason-1";
 	}
 
+	&>h1 {
+		grid-area: title;
+		justify-self: center;
+		align-self: center;
+	}
+
+	div {
+		text-align: initial;
+		display: grid;
+		grid-template-areas:
+		"icon title"
+		"icon text";
+
+		grid-template-rows: 1fr 2fr;
+		grid-template-columns: 1fr 2fr;
+
+		* { padding: 0 20px; }
+
+		img { 
+			grid-area: icon; 
+			justify-self: center;
+			align-self: center;
+		}
+		h1 { grid-area: title; }
+		p { grid-area: text; }
+	}
 }
+
 
 footer {
 	width: 100vw;

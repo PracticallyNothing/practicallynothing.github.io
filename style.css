@@ -161,7 +161,6 @@ body {
 }
 #portfolio h1 {
   grid-area: title;
-  margin-top: 0;
   font-size: 35pt;
 }
 #portfolio p {
@@ -180,13 +179,6 @@ body {
   padding: 15px 15px;
   margin-bottom: 10px;
   border-radius: 20px;
-}
-@media screen and (max-width: 480px) {
-  #portfolio a {
-    width: 80vw;
-    margin: 0 auto;
-    display: block;
-  }
 }
 #portfolio a:hover {
   background: #285151;
@@ -230,14 +222,43 @@ body {
   grid-area: img-9;
 }
 
-.gallery {
+#why-choose-us {
   display: grid;
-  grid-template-areas: "img img img" "img img img" "img img img";
+  background: #323230;
+  color: white;
+  grid-template-areas: "title title title" "reason-1 reason-2 reason-3" "reason-4 reason-5 reason-6";
+  text-align: center;
 }
-@media screen and (max-width: 480px) {
-  .gallery {
-    grid-template-areas: "img" "img" "img" "img" "img" "img" "img" "img" "img";
+@media screen and (max-width: 1024px) {
+  #why-choose-us {
+    grid-template-areas: "title" "reason-1";
   }
+}
+#why-choose-us > h1 {
+  grid-area: title;
+  justify-self: center;
+  align-self: center;
+}
+#why-choose-us div {
+  text-align: initial;
+  display: grid;
+  grid-template-areas: "icon title" "icon text";
+  grid-template-rows: 1fr 2fr;
+  grid-template-columns: 1fr 2fr;
+}
+#why-choose-us div * {
+  padding: 0 20px;
+}
+#why-choose-us div img {
+  grid-area: icon;
+  justify-self: center;
+  align-self: center;
+}
+#why-choose-us div h1 {
+  grid-area: title;
+}
+#why-choose-us div p {
+  grid-area: text;
 }
 
 footer {
