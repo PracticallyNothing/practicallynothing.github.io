@@ -1,3 +1,4 @@
+@import url("https://use.fontawesome.com/releases/v5.11.2/css/all.css");
 @import url("https://fonts.googleapis.com/css?family=Ubuntu&display=swap");
 @keyframes slidein-left {
   0% {
@@ -73,6 +74,9 @@ header ul li a {
 }
 header ul li a:hover {
   background: #181817;
+}
+header i {
+  color: #73736e;
 }
 header h1 {
   padding: 10px;
@@ -189,6 +193,11 @@ body {
 #portfolio a:hover {
   background: #0a5b2a;
 }
+#portfolio a i {
+  border-radius: 100%;
+  background: #0c7235;
+  padding: 5px;
+}
 #portfolio img {
   justify-self: center;
   width: calc(50vw / 3);
@@ -281,12 +290,45 @@ body {
 }
 
 footer {
+  font-family: monospace;
+  display: grid;
+  padding: 30px 0;
+  grid-template-columns: 1fr 1fr 1fr;
+  justify-content: center;
   width: 100vw;
-  height: 200px;
   background: #323230;
+  color: white;
+  text-align: center;
+}
+footer * {
+  justify-self: center;
+  align-self: center;
 }
 footer h1 {
   margin: 0;
+}
+footer ul {
+  list-style: none;
+  padding-left: 0;
+}
+footer li {
+  text-align: left;
+  margin: 10px 0;
+}
+footer a {
+  text-decoration: none;
+  font-weight: bold;
+  color: inherit;
+}
+@media screen and (max-width: 800px) {
+  footer {
+    grid-template-columns: 75vw;
+    margin: 0 auto;
+    grid-template-rows: 190px 190px 70px;
+  }
+  footer ul {
+    padding-left: 15px;
+  }
 }
 
 .section {

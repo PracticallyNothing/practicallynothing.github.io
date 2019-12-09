@@ -1,13 +1,14 @@
 @use "animations";
 @use "header";
 
+@import url("https://use.fontawesome.com/releases/v5.11.2/css/all.css");
 @import url('https://fonts.googleapis.com/css?family=Ubuntu&display=swap');
 html { font-family: 'Ubuntu', serif; }
 
 $phone: 480px;
 $bg-1: #323230;
 //$bg-2: #ce6016;
-//$bg-3: #16ce60;
+//$bg-3: #ce1629;
 
 $bg-2: #16ce60;
 $bg-3: #10d2f6;
@@ -126,6 +127,12 @@ body {
 		&:hover {
 			background: darken($bg-2, 25%);
 		}
+
+		i {
+			border-radius: 100%;
+			background: darken($bg-2, 20%);
+			padding: 5px;
+		}
 	}
 	img {
 		justify-self: center;
@@ -208,10 +215,30 @@ body {
 
 
 footer {
-	width: 100vw;
-	height: 200px;
-	background: $bg-1;
+	font-family: monospace;
+	display: grid;
+	padding: 30px 0;
+	grid-template-columns: 1fr 1fr 1fr;
+	justify-content: center;
+
+	* { justify-self: center; align-self: center; }
 	h1 { margin: 0; }
+	ul { list-style: none; padding-left: 0; }
+	li { text-align: left; margin: 10px 0; }
+	a { text-decoration: none; font-weight: bold; color: inherit; }
+
+	@media screen and (max-width: 800px) {
+		grid-template-columns: 75vw;
+		margin: 0 auto;
+		grid-template-rows: 190px 190px 70px;
+		ul { padding-left: 15px; }
+	}
+	width: 100vw;
+	background: $bg-1;
+	color: white;
+	text-align: center;
+
+
 }
 
 .section {
