@@ -124,84 +124,52 @@ body {
 }
 #intro div img {
   animation: 1s ease-out 0s 1 slidein-right;
-  min-width: 450px;
-  height: auto;
+  width: auto;
+  height: 60vh;
 }
-@media screen and (max-width: 480px), (max-height: 480px) {
+@media screen and (max-width: 480px) {
   #intro div img {
-    margin-top: 55px;
-    min-width: 250px;
+    width: 80vw;
+    height: auto;
   }
 }
 #intro div p {
   animation: 1.15s ease-out 0s 1 slidein-right;
   font-size: 25pt;
 }
-@media screen and (max-width: 480px), (max-height: 480px) {
+@media screen and (max-width: 480px) {
   #intro div p {
     font-size: 15pt;
   }
 }
 
 #portfolio {
-  background: #306262;
-}
-#portfolio .right-trapezoid-bottom-right {
-  width: 55%;
-  min-height: 500px;
-  padding: 0 5px 0 0;
+  display: grid;
   background: #60b1b1;
-  padding-right: 0px;
-  border-right: 0;
-  position: relative;
+  grid-template-areas: "title img-1 img-4 img-7" "text  img-2 img-5 img-8" "link  img-3 img-6 img-9";
+  text-align: center;
 }
-@media screen and (max-width: 480px), (max-height: 480px) {
-  #portfolio .right-trapezoid-bottom-right {
-    width: 100vw;
-    min-height: 100vh;
+@media screen and (max-width: 1024px) {
+  #portfolio {
+    grid-template-areas: "title" "text " "img-1" "img-2" "img-3" "img-4" "img-5" "img-6" "img-7" "img-8" "img-9" "link";
+    grid-row-gap: 10px;
   }
 }
-#portfolio .right-trapezoid-bottom-right::after {
-  content: "";
-  width: 0;
-  height: 0;
-  position: absolute;
-  top: 0;
-  display: block;
-  border-style: solid;
-  border-color: #60b1b1 transparent transparent transparent;
-  border-width: 500px 251px 0 0;
-  right: -250px;
+#portfolio * {
+  justify-self: center;
+  align-self: center;
 }
-@media screen and (max-width: 480px), (max-height: 480px) {
-  #portfolio .right-trapezoid-bottom-right::after {
-    border-width: 0 0 0 0;
-    right: 0px;
-  }
-}
-#portfolio .right-trapezoid-bottom-right div {
-  display: block;
-  position: absolute;
-  top: 50%;
-  left: 20px;
-  transform: translateY(-50%);
-}
-@media screen and (max-width: 480px), (max-height: 480px) {
-  #portfolio .right-trapezoid-bottom-right div {
-    top: 50%;
-    left: 0;
-    transform: translate(0, -50%);
-    text-align: center;
-  }
-}
-#portfolio .right-trapezoid-bottom-right div h1 {
+#portfolio h1 {
+  grid-area: title;
   margin-top: 0;
   font-size: 35pt;
 }
-#portfolio .right-trapezoid-bottom-right div p {
+#portfolio p {
+  grid-area: text;
   font-size: 20pt;
 }
-#portfolio .right-trapezoid-bottom-right div a {
+#portfolio a {
+  grid-area: link;
   display: inline-block;
   background: #306262;
   color: white;
@@ -210,17 +178,66 @@ body {
   text-align: center;
   text-decoration: none;
   padding: 15px 15px;
+  margin-bottom: 10px;
   border-radius: 20px;
 }
-@media screen and (max-width: 480px), (max-height: 480px) {
-  #portfolio .right-trapezoid-bottom-right div a {
+@media screen and (max-width: 480px) {
+  #portfolio a {
     width: 80vw;
     margin: 0 auto;
     display: block;
   }
 }
-#portfolio .right-trapezoid-bottom-right div a:hover {
+#portfolio a:hover {
   background: #285151;
+}
+#portfolio img {
+  justify-self: center;
+  width: calc(50vw / 3);
+  height: calc((50vw / 3) * ( 9 / 16 ));
+}
+@media screen and (max-width: 1024px) {
+  #portfolio img {
+    width: 75vw;
+    height: calc(75vw * ( 9 / 16 ));
+  }
+}
+#portfolio #pf-img-1 {
+  grid-area: img-1;
+}
+#portfolio #pf-img-2 {
+  grid-area: img-2;
+}
+#portfolio #pf-img-3 {
+  grid-area: img-3;
+}
+#portfolio #pf-img-4 {
+  grid-area: img-4;
+}
+#portfolio #pf-img-5 {
+  grid-area: img-5;
+}
+#portfolio #pf-img-6 {
+  grid-area: img-6;
+}
+#portfolio #pf-img-7 {
+  grid-area: img-7;
+}
+#portfolio #pf-img-8 {
+  grid-area: img-8;
+}
+#portfolio #pf-img-9 {
+  grid-area: img-9;
+}
+
+.gallery {
+  display: grid;
+  grid-template-areas: "img img img" "img img img" "img img img";
+}
+@media screen and (max-width: 480px) {
+  .gallery {
+    grid-template-areas: "img" "img" "img" "img" "img" "img" "img" "img" "img";
+  }
 }
 
 footer {
@@ -234,16 +251,16 @@ footer {
   width: 100vw;
 }
 .section-25vh {
-  min-height: 250px;
+  min-height: 25vh;
 }
 .section-50vh {
-  min-height: 500px;
+  min-height: 50vh;
 }
 .section-75vh {
-  min-height: 750px;
+  min-height: 75vh;
 }
 .section-100vh {
-  min-height: 1000px;
+  min-height: 100vh;
 }
 
 /*# sourceMappingURL=style.css.map */
