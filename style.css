@@ -124,13 +124,13 @@ body {
 }
 #intro div img {
   animation: 1s ease-out 0s 1 slidein-right;
-  width: auto;
-  height: 60vh;
+  width: 80vw;
+  height: auto;
 }
-@media screen and (max-width: 480px) {
+@media screen and (orientation: landscape) {
   #intro div img {
-    width: 80vw;
-    height: auto;
+    width: auto;
+    height: 60vh;
   }
 }
 #intro div p {

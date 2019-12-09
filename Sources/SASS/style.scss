@@ -33,16 +33,16 @@ body {
 
 	div {
 		text-align: center;
-		@include centered-absolute();
+		@include centered-absolute;
 		img {
 			animation: 1s ease-out 0s 1 slidein-right;
 
-			width: auto;
-			height: 60vh; 
+			width: 80vw;
+			height: auto; 
 
-			@include on-phone { 
-				width: 80vw;
-				height: auto; 
+			@media screen and (orientation: landscape) { 
+				width: auto;
+				height: 60vh; 
 			}
 		}
 		p {
