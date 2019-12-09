@@ -145,14 +145,20 @@ body {
 
 #portfolio {
   display: grid;
-  background: #60b1b1;
+  background: #14b755;
+  border-bottom: 20px solid #0c7235;
+  border-top: 20px solid #23f477;
+  padding: 25px 0;
   grid-template-areas: "title img-1 img-4 img-7" "text  img-2 img-5 img-8" "link  img-3 img-6 img-9";
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  grid-row-gap: 10px;
+  color: white;
   text-align: center;
 }
 @media screen and (max-width: 1024px) {
   #portfolio {
     grid-template-areas: "title" "text " "img-1" "img-2" "img-3" "img-4" "img-5" "img-6" "img-7" "img-8" "img-9" "link";
-    grid-row-gap: 10px;
+    grid-template-columns: 1fr;
   }
 }
 #portfolio * {
@@ -170,7 +176,7 @@ body {
 #portfolio a {
   grid-area: link;
   display: inline-block;
-  background: #306262;
+  background: #0f8940;
   color: white;
   transition: 0.25s;
   font-size: 20pt;
@@ -181,7 +187,7 @@ body {
   border-radius: 20px;
 }
 #portfolio a:hover {
-  background: #285151;
+  background: #0a5b2a;
 }
 #portfolio img {
   justify-self: center;
@@ -224,10 +230,12 @@ body {
 
 #why-choose-us {
   display: grid;
-  background: #323230;
+  background: #0798b3;
+  padding-bottom: 50px;
   color: white;
   grid-template-areas: "title title title" "reason-1 reason-2 reason-3" "reason-4 reason-5 reason-6";
   text-align: center;
+  grid-row-gap: 10px;
 }
 @media screen and (max-width: 1024px) {
   #why-choose-us {
@@ -238,34 +246,47 @@ body {
   grid-area: title;
   justify-self: center;
   align-self: center;
+  font-size: 35pt;
 }
 #why-choose-us div {
   text-align: initial;
   display: grid;
   grid-template-areas: "icon title" "icon text";
-  grid-template-rows: 1fr 2fr;
+  grid-template-rows: 1fr 1fr;
   grid-template-columns: 1fr 2fr;
+}
+@media screen and (max-width: 1024px) {
+  #why-choose-us div {
+    grid-template-rows: 1fr 1fr;
+  }
 }
 #why-choose-us div * {
   padding: 0 20px;
 }
 #why-choose-us div img {
+  width: 100%;
+  height: auto;
   grid-area: icon;
   justify-self: center;
   align-self: center;
 }
 #why-choose-us div h1 {
   grid-area: title;
+  justify-self: start;
+  align-self: end;
 }
 #why-choose-us div p {
   grid-area: text;
+  align-self: start;
 }
 
 footer {
   width: 100vw;
   height: 200px;
-  background: #BBBBB0;
-  box-shadow: 0px -5px 3px #7f7f6d;
+  background: #323230;
+}
+footer h1 {
+  margin: 0;
 }
 
 .section {

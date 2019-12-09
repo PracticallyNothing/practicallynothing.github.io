@@ -6,7 +6,11 @@ html { font-family: 'Ubuntu', serif; }
 
 $phone: 480px;
 $bg-1: #323230;
-$bg-2: #306262;
+//$bg-2: #ce6016;
+//$bg-3: #16ce60;
+
+$bg-2: #16ce60;
+$bg-3: #10d2f6;
 
 @mixin on-phone() {
 	@media screen and (max-width: $phone) {
@@ -57,12 +61,21 @@ body {
 
 #portfolio {
 	display: grid;
-	background: lighten($bg-2, 25%);
+	background: darken($bg-2, 5%);
+	border-bottom: 20px solid darken($bg-2, 20%);
+	border-top: 20px solid saturate(lighten($bg-2, 10%), 10%);
+
+	padding: 25px 0;
 
 	grid-template-areas:
 	"title img-1 img-4 img-7"
 	"text  img-2 img-5 img-8"
 	"link  img-3 img-6 img-9";
+
+	grid-template-columns: 2fr 1fr 1fr 1fr;
+	grid-row-gap: 10px;
+
+	color: white;
 
 	@media screen and (max-width: 1024px) {
 		grid-template-areas:
@@ -78,7 +91,7 @@ body {
 		"img-8"
 		"img-9"
 		"link";
-		grid-row-gap: 10px;
+		grid-template-columns: 1fr;
 	}
 
 	* { justify-self: center; align-self: center; }
@@ -98,7 +111,7 @@ body {
 		grid-area: link;
 		display: inline-block;
 
-		background: $bg-2;
+		background: darken($bg-2, 15%);
 		color: white;
 		transition: 0.25s;
 
@@ -111,7 +124,7 @@ body {
 		border-radius: 20px;
 
 		&:hover {
-			background: darken($bg-2, 5%);
+			background: darken($bg-2, 25%);
 		}
 	}
 	img {
@@ -135,13 +148,16 @@ body {
 
 #why-choose-us {
 	display: grid;
-	background: $bg-1;
+	background: darken($bg-3, 15%);
+	padding-bottom: 50px;
 	color: white;
 	grid-template-areas:
 	"title title title"
 	"reason-1 reason-2 reason-3"
 	"reason-4 reason-5 reason-6";
 	text-align: center;
+
+	grid-row-gap: 10px;
 
 	@media screen and (max-width: 1024px) {
 		grid-template-areas:
@@ -153,6 +169,7 @@ body {
 		grid-area: title;
 		justify-self: center;
 		align-self: center;
+		font-size: 35pt;
 	}
 
 	div {
@@ -162,18 +179,30 @@ body {
 		"icon title"
 		"icon text";
 
-		grid-template-rows: 1fr 2fr;
+		grid-template-rows: 1fr 1fr;
 		grid-template-columns: 1fr 2fr;
+		@media screen and (max-width: 1024px) {
+			grid-template-rows: 1fr 1fr;
+		}
 
 		* { padding: 0 20px; }
 
 		img { 
+			width: 100%;
+			height: auto;
 			grid-area: icon; 
 			justify-self: center;
 			align-self: center;
 		}
-		h1 { grid-area: title; }
-		p { grid-area: text; }
+		h1 { 
+			grid-area: title; 
+			justify-self: start;
+			align-self: end;
+		}
+		p { 
+			grid-area: text; 
+			align-self: start;
+		}
 	}
 }
 
@@ -181,8 +210,8 @@ body {
 footer {
 	width: 100vw;
 	height: 200px;
-	background: #BBBBB0;
-	box-shadow: 0px -5px 3px darken(#BBBBB0, 25%);
+	background: $bg-1;
+	h1 { margin: 0; }
 }
 
 .section {
