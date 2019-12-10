@@ -41,6 +41,14 @@
   }
 }
 header {
+  -webkit-user-select: none;
+  /* Safari */
+  -moz-user-select: none;
+  /* Firefox */
+  -ms-user-select: none;
+  /* IE10+/Edge */
+  user-select: none;
+  /* Standard */
   position: sticky;
   top: 0px;
   z-index: 100;
@@ -431,6 +439,22 @@ footer a {
   grid-template-columns: 1fr 1fr 1fr;
 }
 
+@keyframes anim {
+  from {
+    margin-left: 100%;
+  }
+  to {
+    margin-left: 20px;
+  }
+}
+@keyframes anim-2 {
+  from {
+    margin-right: 0px;
+  }
+  to {
+    margin-right: 20px;
+  }
+}
 .page-title {
   font-family: "Marck Script", cursive;
   font-size: var(--sub-font-size);
@@ -442,6 +466,15 @@ footer a {
   text-align: center;
 }
 .page-title h1 {
+  -webkit-user-select: none;
+  /* Safari */
+  -moz-user-select: none;
+  /* Firefox */
+  -ms-user-select: none;
+  /* IE10+/Edge */
+  user-select: none;
+  /* Standard */
+  white-space: nowrap;
   margin: 0;
 }
 .page-title:before, .page-title:after {
@@ -449,6 +482,12 @@ footer a {
   flex: 1;
   border-bottom: 10px solid #000;
   margin: 0 20px;
+}
+.page-title:before {
+  animation: 1s ease anim;
+}
+.page-title:after {
+  animation: 1s ease anim-2;
 }
 
 #portfolio-title {
