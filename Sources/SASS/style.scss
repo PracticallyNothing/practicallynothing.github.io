@@ -344,6 +344,7 @@ footer {
 	grid-template-columns: 1fr 1fr 1fr;
 }
 .page-title {
+    font-family: 'Marck Script', cursive;
 	font-size: var(--sub-font-size);
 	color: white;
 	text-align: center;
@@ -369,22 +370,16 @@ footer {
 	}
 }
 
-#portfolio-title {
-    font-family: 'Marck Script', cursive;
-	@include title-setup($bg-4);
+#portfolio-title { 
+	@include title-setup($bg-4); 
 }
-
-#prods-services-title{
-    font-family: monospace;
-	@include title-setup($bg-5);
+#prods-services-title { 
+	@include title-setup($bg-5); 
 }
-
-#machines-title {
-	@include title-setup($bg-6);
+#machines-title { 
+	@include title-setup($bg-6); 
 }
-
 #contact-title {
-	font-style: italic;
 	@include title-setup($bg-7);
 	&:after { margin-left: 25px; }
 }

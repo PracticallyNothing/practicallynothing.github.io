@@ -432,6 +432,7 @@ footer a {
 }
 
 .page-title {
+  font-family: "Marck Script", cursive;
   font-size: var(--sub-font-size);
   color: white;
   text-align: center;
@@ -451,7 +452,6 @@ footer a {
 }
 
 #portfolio-title {
-  font-family: "Marck Script", cursive;
   background-color: #ce6016;
 }
 #portfolio-title:before, #portfolio-title:after {
@@ -459,7 +459,6 @@ footer a {
 }
 
 #prods-services-title {
-  font-family: monospace;
   background-color: #ce1629;
 }
 #prods-services-title:before, #prods-services-title:after {
@@ -474,7 +473,6 @@ footer a {
 }
 
 #contact-title {
-  font-style: italic;
   background-color: #1685ce;
 }
 #contact-title:before, #contact-title:after {
