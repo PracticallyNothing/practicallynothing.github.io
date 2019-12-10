@@ -2,20 +2,29 @@
 @use "header";
 
 @import url("https://use.fontawesome.com/releases/v5.11.2/css/all.css");
-@import url('https://fonts.googleapis.com/css?family=Ubuntu&display=swap');
+ @import url('https://fonts.googleapis.com/css?family=Marck+Script|Ubuntu&display=swap');
 html { font-family: 'Ubuntu', serif; }
 
 $phone: 480px;
 $bg-1: #323230;
-//$bg-2: #ce6016;
-//$bg-3: #ce1629;
 
 $bg-2: #16ce60;
 $bg-3: #10d2f6;
 
+$bg-4: #ce6016;
+$bg-5: #ce1629;
+$bg-6: #6016ce;
+$bg-7: #1685ce;
+
 :root {
 	--big-font-size: 35pt;
-	--sub-font-size: 20pt;
+	--sub-font-size: 22pt;
+
+	@media screen and (max-width: 800px)
+	{
+		--big-font-size: 27pt;
+		--sub-font-size: 20pt;
+	}
 
 	@media screen and (max-width: 600px) {
 		--big-font-size: 25pt;
@@ -266,6 +275,37 @@ body {
 	}
 }
 
+.collapsable.section {
+	text-align: center;
+	font-size: var(--big-font-size);
+	@media screen and (max-width: 800px)
+	{
+		font-size: calc(var(--big-font-size) - 6pt);
+	}
+	background-color: darken($bg-1, 2.5%);
+
+	color: white;
+
+	i { color: lighten(#323230, 25%); }
+
+	&:nth-child(1) { p { margin-top: 75px; } }
+
+	.section {
+		background-color: darken($bg-1, 2.5%);
+		transition: 0.25s;
+
+		&:hover {
+			cursor: pointer;
+			background-color: lighten($bg-1,15%);
+		}
+
+		p {
+			margin: 0;
+		}
+	}
+}
+
+div.under-header { height: 50px; }
 
 footer {
 	font-family: monospace;
@@ -290,8 +330,63 @@ footer {
 	background: $bg-1;
 	color: white;
 	text-align: center;
+}
 
+.hidden {
+	transition: 0.25s;
+	height: 0 !important;
+	min-height: 0 !important;
+	max-height: 0 !important;
+}
 
+.gallery-3cols {
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+}
+.page-title {
+	font-size: var(--sub-font-size);
+	color: white;
+	text-align: center;
+	padding: 20px 0;
+	h1 { margin: 0; }
+
+	display: flex;
+	align-items: center;
+	text-align: center;
+
+	&:before, &:after { 
+		content: "";
+		flex: 1;
+		border-bottom: 10px solid #000;
+		margin: 0 20px;
+	}
+}
+
+@mixin title-setup($color) {
+	background-color: $color;
+	&:before, &:after { 
+		border-bottom: 10px solid darken($color, 15%);
+	}
+}
+
+#portfolio-title {
+    font-family: 'Marck Script', cursive;
+	@include title-setup($bg-4);
+}
+
+#prods-services-title{
+    font-family: monospace;
+	@include title-setup($bg-5);
+}
+
+#machines-title {
+	@include title-setup($bg-6);
+}
+
+#contact-title {
+	font-style: italic;
+	@include title-setup($bg-7);
+	&:after { margin-left: 25px; }
 }
 
 .section {

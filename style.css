@@ -1,5 +1,5 @@
 @import url("https://use.fontawesome.com/releases/v5.11.2/css/all.css");
-@import url("https://fonts.googleapis.com/css?family=Ubuntu&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Marck+Script|Ubuntu&display=swap");
 @keyframes slidein-left {
   0% {
     opacity: 0;
@@ -113,7 +113,13 @@ html {
 
 :root {
   --big-font-size: 35pt;
-  --sub-font-size: 20pt;
+  --sub-font-size: 22pt;
+}
+@media screen and (max-width: 800px) {
+  :root {
+    --big-font-size: 27pt;
+    --sub-font-size: 20pt;
+  }
 }
 @media screen and (max-width: 600px) {
   :root {
@@ -338,6 +344,39 @@ body {
   }
 }
 
+.collapsable.section {
+  text-align: center;
+  font-size: var(--big-font-size);
+  background-color: #2b2b2a;
+  color: white;
+}
+@media screen and (max-width: 800px) {
+  .collapsable.section {
+    font-size: calc(var(--big-font-size) - 6pt);
+  }
+}
+.collapsable.section i {
+  color: #73736e;
+}
+.collapsable.section:nth-child(1) p {
+  margin-top: 75px;
+}
+.collapsable.section .section {
+  background-color: #2b2b2a;
+  transition: 0.25s;
+}
+.collapsable.section .section:hover {
+  cursor: pointer;
+  background-color: #595955;
+}
+.collapsable.section .section p {
+  margin: 0;
+}
+
+div.under-header {
+  height: 50px;
+}
+
 footer {
   font-family: monospace;
   display: grid;
@@ -378,6 +417,71 @@ footer a {
   footer ul {
     padding-left: 15px;
   }
+}
+
+.hidden {
+  transition: 0.25s;
+  height: 0 !important;
+  min-height: 0 !important;
+  max-height: 0 !important;
+}
+
+.gallery-3cols {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.page-title {
+  font-size: var(--sub-font-size);
+  color: white;
+  text-align: center;
+  padding: 20px 0;
+  display: flex;
+  align-items: center;
+  text-align: center;
+}
+.page-title h1 {
+  margin: 0;
+}
+.page-title:before, .page-title:after {
+  content: "";
+  flex: 1;
+  border-bottom: 10px solid #000;
+  margin: 0 20px;
+}
+
+#portfolio-title {
+  font-family: "Marck Script", cursive;
+  background-color: #ce6016;
+}
+#portfolio-title:before, #portfolio-title:after {
+  border-bottom: 10px solid #89400f;
+}
+
+#prods-services-title {
+  font-family: monospace;
+  background-color: #ce1629;
+}
+#prods-services-title:before, #prods-services-title:after {
+  border-bottom: 10px solid #890f1b;
+}
+
+#machines-title {
+  background-color: #6016ce;
+}
+#machines-title:before, #machines-title:after {
+  border-bottom: 10px solid #400f89;
+}
+
+#contact-title {
+  font-style: italic;
+  background-color: #1685ce;
+}
+#contact-title:before, #contact-title:after {
+  border-bottom: 10px solid #0f5889;
+}
+#contact-title:after {
+  margin-left: 25px;
 }
 
 .section {
