@@ -11,13 +11,14 @@ header {
 
 	ul {
 		margin: 0;
+		padding: 0;
 
 		position: absolute;
 		top: 50%;
 		left: 50%;
 		transform: translate(-50%, 50%) rotateX(90deg);
 
-		min-width: 1000px;
+		min-width: 760px;
 		text-align: center;
 
 		transition: 0.25s;
@@ -25,7 +26,7 @@ header {
 		li {
 			display: inline-block;
 			list-style-type: none;
-			margin-left: 20px;
+			margin: 0 5px;
 
 			a {
 				transition: 0.25s;
@@ -40,6 +41,7 @@ header {
 	}
 
 	i { color: lighten(#323230, 25%); }
+	// /home/void-linux/Workspaces/Web/ArtStyle_Redesign/images/reasons/
 
 	margin-bottom: -50px;
 
@@ -53,6 +55,7 @@ header {
 		top: 50%;
 		left: 50%;
 		transform: translate(-50%, -50%);
+		min-width: 135px;
 
 		#art { color: #bee826; }
 		#style { color: #10d2f6; }

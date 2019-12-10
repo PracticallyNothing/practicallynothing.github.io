@@ -13,6 +13,21 @@ $bg-1: #323230;
 $bg-2: #16ce60;
 $bg-3: #10d2f6;
 
+:root {
+	--big-font-size: 35pt;
+	--sub-font-size: 20pt;
+
+	@media screen and (max-width: 600px) {
+		--big-font-size: 25pt;
+		--sub-font-size: 16pt;
+	}
+
+	@media screen and (max-width: 480px) {
+		--big-font-size: 22pt;
+		--sub-font-size: 14pt;
+	}
+}
+
 @mixin on-phone() {
 	@media screen and (max-width: $phone) {
 		@content;
@@ -52,13 +67,14 @@ body {
 		}
 		p {
 			animation: 1.15s ease-out 0s 1 slidein-right;
-			font-size: 25pt;
+			font-size: var(--sub-font-size);
 			@include on-phone() {
 				font-size: 15pt;
 			}
 		}
 	}
 }
+
 
 #portfolio {
 	display: grid;
@@ -95,28 +111,32 @@ body {
 		grid-template-columns: 1fr;
 	}
 
-	* { justify-self: center; align-self: center; }
+	* {
+		justify-self: center; align-self: center; 
+		max-width: 80vw;
+	}
 	text-align: center;
+
 
 	h1 { 
 		grid-area: title;
-		font-size: 35pt;
+		margin-bottom: 0;
+		font-size: var(--big-font-size);
 	}
 
 	p { 
 		grid-area: text; 
-		font-size: 20pt; 
+		font-size: var(--sub-font-size);
 	}
 
 	a {
 		grid-area: link;
-		display: inline-block;
 
 		background: darken($bg-2, 15%);
 		color: white;
 		transition: 0.25s;
 
-		font-size: 20pt;
+		font-size: var(--sub-font-size);
 		text-align: center;
 		text-decoration: none;
 
@@ -124,9 +144,7 @@ body {
 		margin-bottom: 10px;
 		border-radius: 20px;
 
-		&:hover {
-			background: darken($bg-2, 25%);
-		}
+		&:hover { background: darken($bg-2, 25%); }
 
 		i {
 			border-radius: 100%;
@@ -176,21 +194,19 @@ body {
 		grid-area: title;
 		justify-self: center;
 		align-self: center;
-		font-size: 35pt;
+		font-size: var(--big-font-size);
 	}
 
 	div {
 		text-align: initial;
 		display: grid;
+		justify-content: center;
 		grid-template-areas:
 		"icon title"
 		"icon text";
 
 		grid-template-rows: 1fr 1fr;
 		grid-template-columns: 1fr 2fr;
-		@media screen and (max-width: 1024px) {
-			grid-template-rows: 1fr 1fr;
-		}
 
 		* { padding: 0 20px; }
 
@@ -205,10 +221,47 @@ body {
 			grid-area: title; 
 			justify-self: start;
 			align-self: end;
+			margin-bottom: 0;
 		}
 		p { 
 			grid-area: text; 
 			align-self: start;
+		}
+		padding: 10px;
+
+		background-color: darken($bg-3, 20%);
+		&:nth-child(even) {
+			background-color: darken($bg-3, 5%);
+		}
+
+		@media screen and (max-width: 1024px) {
+			padding: 30px 0;
+			grid-template-columns: 75vw;
+			grid-template-rows: auto;
+
+			grid-template-areas:
+			"icon"
+			"title"
+			"text";
+
+			text-align: center;
+
+			img {
+				width: 40vw;
+				height: auto; 
+
+				@media screen and (orientation: landscape) { 
+					width: auto;
+					height: 40vh; 
+				}
+			}
+
+			h1 { 
+				margin: 0;
+				padding: 0; 
+				justify-self: center;
+				align-self: center;
+			}
 		}
 	}
 }

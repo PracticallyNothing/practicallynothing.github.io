@@ -52,18 +52,19 @@ header {
 }
 header ul {
   margin: 0;
+  padding: 0;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, 50%) rotateX(90deg);
-  min-width: 1000px;
+  min-width: 760px;
   text-align: center;
   transition: 0.25s;
 }
 header ul li {
   display: inline-block;
   list-style-type: none;
-  margin-left: 20px;
+  margin: 0 5px;
 }
 header ul li a {
   transition: 0.25s;
@@ -87,6 +88,7 @@ header h1 {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  min-width: 135px;
 }
 header h1 #art {
   color: #bee826;
@@ -107,6 +109,23 @@ header:hover ul {
 
 html {
   font-family: "Ubuntu", serif;
+}
+
+:root {
+  --big-font-size: 35pt;
+  --sub-font-size: 20pt;
+}
+@media screen and (max-width: 600px) {
+  :root {
+    --big-font-size: 25pt;
+    --sub-font-size: 16pt;
+  }
+}
+@media screen and (max-width: 480px) {
+  :root {
+    --big-font-size: 22pt;
+    --sub-font-size: 14pt;
+  }
 }
 
 body {
@@ -139,7 +158,7 @@ body {
 }
 #intro div p {
   animation: 1.15s ease-out 0s 1 slidein-right;
-  font-size: 25pt;
+  font-size: var(--sub-font-size);
 }
 @media screen and (max-width: 480px) {
   #intro div p {
@@ -168,22 +187,23 @@ body {
 #portfolio * {
   justify-self: center;
   align-self: center;
+  max-width: 80vw;
 }
 #portfolio h1 {
   grid-area: title;
-  font-size: 35pt;
+  margin-bottom: 0;
+  font-size: var(--big-font-size);
 }
 #portfolio p {
   grid-area: text;
-  font-size: 20pt;
+  font-size: var(--sub-font-size);
 }
 #portfolio a {
   grid-area: link;
-  display: inline-block;
   background: #0f8940;
   color: white;
   transition: 0.25s;
-  font-size: 20pt;
+  font-size: var(--sub-font-size);
   text-align: center;
   text-decoration: none;
   padding: 15px 15px;
@@ -255,19 +275,17 @@ body {
   grid-area: title;
   justify-self: center;
   align-self: center;
-  font-size: 35pt;
+  font-size: var(--big-font-size);
 }
 #why-choose-us div {
   text-align: initial;
   display: grid;
+  justify-content: center;
   grid-template-areas: "icon title" "icon text";
   grid-template-rows: 1fr 1fr;
   grid-template-columns: 1fr 2fr;
-}
-@media screen and (max-width: 1024px) {
-  #why-choose-us div {
-    grid-template-rows: 1fr 1fr;
-  }
+  padding: 10px;
+  background-color: #06839a;
 }
 #why-choose-us div * {
   padding: 0 20px;
@@ -283,10 +301,41 @@ body {
   grid-area: title;
   justify-self: start;
   align-self: end;
+  margin-bottom: 0;
 }
 #why-choose-us div p {
   grid-area: text;
   align-self: start;
+}
+#why-choose-us div:nth-child(even) {
+  background-color: #09c2e4;
+}
+@media screen and (max-width: 1024px) {
+  #why-choose-us div {
+    padding: 30px 0;
+    grid-template-columns: 75vw;
+    grid-template-rows: auto;
+    grid-template-areas: "icon" "title" "text";
+    text-align: center;
+  }
+  #why-choose-us div img {
+    width: 40vw;
+    height: auto;
+  }
+}
+@media screen and (max-width: 1024px) and (orientation: landscape) {
+  #why-choose-us div img {
+    width: auto;
+    height: 40vh;
+  }
+}
+@media screen and (max-width: 1024px) {
+  #why-choose-us div h1 {
+    margin: 0;
+    padding: 0;
+    justify-self: center;
+    align-self: center;
+  }
 }
 
 footer {
