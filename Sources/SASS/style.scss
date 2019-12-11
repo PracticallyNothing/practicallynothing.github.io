@@ -343,24 +343,14 @@ footer {
 	to { width: 0; }
 }
 
-#menu {
-	display: grid;
+.menu {
 	min-height: 75vh;
-	grid-template-columns: 1fr 1fr 1fr;
 	justify-content: center;
 	align-content: center;
 	text-align: center;
 	color: white;
 	background: darken($bg-1, 10%);
 	position: relative;
-
-	@media screen and (max-width: 800px) {
-		grid-template-columns: 1fr 1fr;
-	}
-
-	@media screen and (max-width: 480px) {
-		grid-template-columns: 1fr;
-	}
 
 	.button {
 		display: grid;
@@ -374,7 +364,7 @@ footer {
 		border-right: 10px ridge $bg-5;
 		transition: 0.25s;
 
-		@media screen and (max-width: 800px) { width: 40vw; }
+		@media screen and (max-width: 1024px) { width: 35vw; }
 		@media screen and (max-width: 480px) { width: 90vw; }
 
 		&:hover {
@@ -484,6 +474,7 @@ footer {
 }
 
 .gallery-3cols {
+	display: grid;
 	grid-template-columns: 1fr 1fr 1fr;
 	grid-row-gap: 20px;
 	grid-column-gap: 20px;

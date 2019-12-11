@@ -450,10 +450,8 @@ footer a {
     width: 0;
   }
 }
-#menu {
-  display: grid;
+.menu {
   min-height: 75vh;
-  grid-template-columns: 1fr 1fr 1fr;
   justify-content: center;
   align-content: center;
   text-align: center;
@@ -461,17 +459,7 @@ footer a {
   background: #181817;
   position: relative;
 }
-@media screen and (max-width: 800px) {
-  #menu {
-    grid-template-columns: 1fr 1fr;
-  }
-}
-@media screen and (max-width: 480px) {
-  #menu {
-    grid-template-columns: 1fr;
-  }
-}
-#menu .button {
+.menu .button {
   display: grid;
   width: 25vw;
   margin: 20px;
@@ -483,21 +471,21 @@ footer a {
   border-right: 10px ridge #ce1629;
   transition: 0.25s;
 }
-@media screen and (max-width: 800px) {
-  #menu .button {
-    width: 40vw;
+@media screen and (max-width: 1024px) {
+  .menu .button {
+    width: 35vw;
   }
 }
 @media screen and (max-width: 480px) {
-  #menu .button {
+  .menu .button {
     width: 90vw;
   }
 }
-#menu .button:hover {
+.menu .button:hover {
   cursor: pointer;
   background: #e92e42;
 }
-#menu .button p {
+.menu .button p {
   font-family: "Marck Script", cursive;
   font-size: 20pt;
 }
@@ -636,6 +624,7 @@ footer a {
 }
 
 .gallery-3cols {
+  display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-row-gap: 20px;
   grid-column-gap: 20px;

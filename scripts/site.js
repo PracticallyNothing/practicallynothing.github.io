@@ -1,4 +1,4 @@
-let menu = document.getElementById("menu");
+let menu = document.getElementsByClassName("menu")[0];
 let initialMenuHeight = menu.clientHeight;
 let activePage = null
 
@@ -6,22 +6,6 @@ function init() {
 	let elems = document.getElementsByClassName("button");
 	for(let i = 0; i < elems.length; i++) {
 		elems[i].onclick = () => { show(elems[i]); }
-	}
-
-	let imgs = document.getElementsByTagName("img");
-	for(let i = 0; i < imgs.length; i++) {
-		imgs[i].addEventListener("load",
-			() => { 
-				imgs[i].animate(
-					[ 
-						{opacity: 0}, 
-						{opacity: 100} 
-					], { 
-						duration: 300, 
-						iterations: 1, 
-						fill: "forwards" 
-					});
-			});
 	}
 }
 
