@@ -5,6 +5,13 @@
 	user-select: none; /* Standard */
 }
 
+/*
+@font-face {
+	font-family: "art-style-logo-font";
+	src: url("./Font/PFDinTextCompPro-Regular.ttf");
+}
+*/
+
 header {
 	@include unselectable;
 	position: sticky;
@@ -49,11 +56,11 @@ header {
 	}
 
 	i { color: lighten(#323230, 25%); }
-	// /home/void-linux/Workspaces/Web/ArtStyle_Redesign/images/reasons/
 
 	margin-bottom: -50px;
 
 	h1 { 
+		//font-family: art-style-logo-font;
 		padding: 10px; 
 		display: block;
 		transition: 0.25s;

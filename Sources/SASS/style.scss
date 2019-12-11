@@ -32,8 +32,13 @@ $bg-7: #1685ce;
 	}
 
 	@media screen and (max-width: 480px) {
-		--big-font-size: 22pt;
-		--sub-font-size: 14pt;
+		--big-font-size: 18pt;
+		--sub-font-size: 15pt;
+	}
+
+	@media screen and (max-width: 375px) {
+		--big-font-size: 16pt;
+		--sub-font-size: 10pt;
 	}
 }
 
@@ -84,9 +89,6 @@ body {
 		p {
 			animation: 1.15s ease-out 0s 1 slidein-right;
 			font-size: var(--sub-font-size);
-			@include on-phone() {
-				font-size: 15pt;
-			}
 		}
 	}
 }
@@ -339,18 +341,117 @@ footer {
 	text-align: center;
 }
 
-.hidden {
-	transition: 0.25s;
-	height: 0 !important;
-	min-height: 0 !important;
-	max-height: 0 !important;
+@keyframes dissapear-left {
+	from { width: initial; }
+	to { width: 0; }
 }
 
-.gallery-3cols {
+#menu {
 	display: grid;
 	grid-template-columns: 1fr 1fr 1fr;
+	justify-content: center;
+	align-content: center;
+	text-align: center;
+	color: white;
+	background: darken($bg-1, 10%);
+	position: relative;
+
+	@media screen and (max-width: 800px) {
+		grid-template-columns: 1fr 1fr;
+	}
+
+	@media screen and (max-width: 480px) {
+		grid-template-columns: 1fr;
+	}
+
+	.button {
+		display: grid;
+		width: 25vw;
+		height: 300px;
+		margin: 20px;
+		justify-self: center;
+		align-self: center;
+		background: $bg-5;
+		border: 10px groove $bg-5;
+		border-bottom: 10px ridge $bg-5;
+		border-right: 10px ridge $bg-5;
+		transition: 0.25s;
+
+		@media screen and (max-width: 800px) { width: 40vw; }
+		@media screen and (max-width: 480px) { width: 90vw; }
+
+		&:hover {
+			cursor: pointer;
+			background: lighten($bg-5, 10%);
+		}
+		
+		p {
+			font-family: 'Marck Script', cursive;
+			font-size: var(--big-font-size);
+		}
+	}
 }
 
+@mixin setup-return-button($bg-color) {
+	.return-button {
+		background: darken($bg-color, 5%);
+
+		i { background: darken($bg-color, 10%); }
+
+		&:hover {
+			background: darken($bg-color, 10%);
+			i { background: darken($bg-color, 15%); }
+		}
+	}
+}
+
+.portfolio-page {
+	position: absolute;
+	top: 0px;
+	left: 100%;
+	width: 100vw;
+	height: 500px;
+
+	.return-button {
+		cursor: pointer;
+		padding: 30px 0;
+		font-size: var(--big-font-size);
+		i { 
+			padding: 10px;
+			border-radius: 100%;
+			transition: 0.25s; 
+		}
+		transition: 0.25s;
+	}
+
+	&#sveteshti-reklami {
+		background: $bg-2; 
+		@include setup-return-button($bg-2);
+	}
+	&#nesveteshti-reklami { 
+		background: $bg-3; 
+		@include setup-return-button($bg-3);
+	}
+	&#interiorni-resheniq { 
+		background: $bg-4; 
+		@include setup-return-button($bg-4);
+	}
+	&#reklamni-konstr { 
+		background: $bg-5; 
+		@include setup-return-button($bg-5);
+	}
+	&#brandirane-avto { 
+		background: $bg-6; 
+		@include setup-return-button($bg-6);
+	}
+	&#suvenirna-reklama { 
+		background: $bg-7; 
+		@include setup-return-button($bg-7);
+	}
+
+}
+
+.hidden { display: none !important; }
 
 @keyframes anim {
 	from { margin-left: 100%; }

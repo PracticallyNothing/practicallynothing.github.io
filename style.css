@@ -40,6 +40,12 @@
     transform: translateX(-150%);
   }
 }
+/*
+@font-face {
+	font-family: "art-style-logo-font";
+	src: url("./Font/PFDinTextCompPro-Regular.ttf");
+}
+*/
 header {
   -webkit-user-select: none;
   /* Safari */
@@ -137,8 +143,14 @@ html {
 }
 @media screen and (max-width: 480px) {
   :root {
-    --big-font-size: 22pt;
-    --sub-font-size: 14pt;
+    --big-font-size: 18pt;
+    --sub-font-size: 15pt;
+  }
+}
+@media screen and (max-width: 375px) {
+  :root {
+    --big-font-size: 16pt;
+    --sub-font-size: 10pt;
   }
 }
 
@@ -173,11 +185,6 @@ body {
 #intro div p {
   animation: 1.15s ease-out 0s 1 slidein-right;
   font-size: var(--sub-font-size);
-}
-@media screen and (max-width: 480px) {
-  #intro div p {
-    font-size: 15pt;
-  }
 }
 
 #portfolio {
@@ -427,16 +434,177 @@ footer a {
   }
 }
 
-.hidden {
-  transition: 0.25s;
-  height: 0 !important;
-  min-height: 0 !important;
-  max-height: 0 !important;
+@keyframes dissapear-left {
+  from {
+    width: initial;
+  }
+  to {
+    width: 0;
+  }
 }
-
-.gallery-3cols {
+#menu {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
+  justify-content: center;
+  align-content: center;
+  text-align: center;
+  color: white;
+  background: #181817;
+  position: relative;
+}
+@media screen and (max-width: 800px) {
+  #menu {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media screen and (max-width: 480px) {
+  #menu {
+    grid-template-columns: 1fr;
+  }
+}
+#menu .button {
+  display: grid;
+  width: 25vw;
+  height: 300px;
+  margin: 20px;
+  justify-self: center;
+  align-self: center;
+  background: #ce1629;
+  border: 10px groove #ce1629;
+  border-bottom: 10px ridge #ce1629;
+  border-right: 10px ridge #ce1629;
+  transition: 0.25s;
+}
+@media screen and (max-width: 800px) {
+  #menu .button {
+    width: 40vw;
+  }
+}
+@media screen and (max-width: 480px) {
+  #menu .button {
+    width: 90vw;
+  }
+}
+#menu .button:hover {
+  cursor: pointer;
+  background: #e92e42;
+}
+#menu .button p {
+  font-family: "Marck Script", cursive;
+  font-size: var(--big-font-size);
+}
+
+.portfolio-page {
+  position: absolute;
+  top: 0px;
+  left: 100%;
+  width: 100vw;
+  height: 500px;
+}
+.portfolio-page .return-button {
+  cursor: pointer;
+  padding: 30px 0;
+  font-size: var(--big-font-size);
+  transition: 0.25s;
+}
+.portfolio-page .return-button i {
+  padding: 10px;
+  border-radius: 100%;
+  transition: 0.25s;
+}
+.portfolio-page#sveteshti-reklami {
+  background: #16ce60;
+}
+.portfolio-page#sveteshti-reklami .return-button {
+  background: #14b755;
+}
+.portfolio-page#sveteshti-reklami .return-button i {
+  background: #11a04b;
+}
+.portfolio-page#sveteshti-reklami .return-button:hover {
+  background: #11a04b;
+}
+.portfolio-page#sveteshti-reklami .return-button:hover i {
+  background: #0f8940;
+}
+.portfolio-page#nesveteshti-reklami {
+  background: #10d2f6;
+}
+.portfolio-page#nesveteshti-reklami .return-button {
+  background: #09c2e4;
+}
+.portfolio-page#nesveteshti-reklami .return-button i {
+  background: #08adcb;
+}
+.portfolio-page#nesveteshti-reklami .return-button:hover {
+  background: #08adcb;
+}
+.portfolio-page#nesveteshti-reklami .return-button:hover i {
+  background: #0798b3;
+}
+.portfolio-page#interiorni-resheniq {
+  background: #ce6016;
+}
+.portfolio-page#interiorni-resheniq .return-button {
+  background: #b75514;
+}
+.portfolio-page#interiorni-resheniq .return-button i {
+  background: #a04b11;
+}
+.portfolio-page#interiorni-resheniq .return-button:hover {
+  background: #a04b11;
+}
+.portfolio-page#interiorni-resheniq .return-button:hover i {
+  background: #89400f;
+}
+.portfolio-page#reklamni-konstr {
+  background: #ce1629;
+}
+.portfolio-page#reklamni-konstr .return-button {
+  background: #b71424;
+}
+.portfolio-page#reklamni-konstr .return-button i {
+  background: #a01120;
+}
+.portfolio-page#reklamni-konstr .return-button:hover {
+  background: #a01120;
+}
+.portfolio-page#reklamni-konstr .return-button:hover i {
+  background: #890f1b;
+}
+.portfolio-page#brandirane-avto {
+  background: #6016ce;
+}
+.portfolio-page#brandirane-avto .return-button {
+  background: #5514b7;
+}
+.portfolio-page#brandirane-avto .return-button i {
+  background: #4b11a0;
+}
+.portfolio-page#brandirane-avto .return-button:hover {
+  background: #4b11a0;
+}
+.portfolio-page#brandirane-avto .return-button:hover i {
+  background: #400f89;
+}
+.portfolio-page#suvenirna-reklama {
+  background: #1685ce;
+}
+.portfolio-page#suvenirna-reklama .return-button {
+  background: #1476b7;
+}
+.portfolio-page#suvenirna-reklama .return-button i {
+  background: #1167a0;
+}
+.portfolio-page#suvenirna-reklama .return-button:hover {
+  background: #1167a0;
+}
+.portfolio-page#suvenirna-reklama .return-button:hover i {
+  background: #0f5889;
+}
+
+.hidden {
+  display: none !important;
 }
 
 @keyframes anim {
