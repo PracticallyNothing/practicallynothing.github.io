@@ -2,11 +2,34 @@ let menu = document.getElementById("menu");
 let initialMenuHeight = menu.clientHeight;
 let activePage = null
 
+function init() {
+	let elems = document.getElementsByClassName("button");
+	for(let i = 0; i < elems.length; i++) {
+		elems[i].onclick = () => { show(elems[i]); }
+	}
+
+	let imgs = document.getElementsByTagName("img");
+	for(let i = 0; i < imgs.length; i++) {
+		imgs[i].addEventListener("load",
+			() => { 
+				imgs[i].animate(
+					[ 
+						{opacity: 0}, 
+						{opacity: 100} 
+					], { 
+						duration: 300, 
+						iterations: 1, 
+						fill: "forwards" 
+					});
+			});
+	}
+}
+
 const scrollToTop = () => {
 	const c = document.documentElement.scrollTop || document.body.scrollTop;
 	if (c > 0) {
 		window.requestAnimationFrame(scrollToTop);
-		window.scrollTo(0, c - c / 8);
+		window.scrollTo(0, c - c / 4);
 	}
 };
 
@@ -22,6 +45,9 @@ function hide() {
 		iterations: 1, 
 		fill: "forwards"
 	});
+
+	menu.style.height = "auto";
+
 	setTimeout(() => {
 		activePage.classList.add("hidden");
 		activePage=null
@@ -43,19 +69,12 @@ function show(section) {
 	});
 	let page = document.querySelector(".portfolio-page#" + section.id);
 
-	console.log(".portfolio-page#" + section.id)
-
 	page.classList.remove("hidden");
 	activePage = page;
+	menu.style.height = page.clientHeight + "px";
 
 	scrollToTop();
 }
 
-function init() {
-	let elems = document.getElementsByClassName("button");
-	for(let i = 0; i < elems.length; i++) {
-		elems[i].onclick = () => { show(elems[i]); }
-	}
-}
 
 init();

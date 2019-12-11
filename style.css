@@ -40,6 +40,14 @@
     transform: translateX(-150%);
   }
 }
+@keyframes fadein {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 100;
+  }
+}
 /*
 @font-face {
 	font-family: "art-style-logo-font";
@@ -444,6 +452,7 @@ footer a {
 }
 #menu {
   display: grid;
+  min-height: 75vh;
   grid-template-columns: 1fr 1fr 1fr;
   justify-content: center;
   align-content: center;
@@ -465,7 +474,6 @@ footer a {
 #menu .button {
   display: grid;
   width: 25vw;
-  height: 300px;
   margin: 20px;
   justify-self: center;
   align-self: center;
@@ -491,7 +499,7 @@ footer a {
 }
 #menu .button p {
   font-family: "Marck Script", cursive;
-  font-size: var(--big-font-size);
+  font-size: 20pt;
 }
 
 .portfolio-page {
@@ -499,11 +507,11 @@ footer a {
   top: 0px;
   left: 100%;
   width: 100vw;
-  height: 500px;
 }
 .portfolio-page .return-button {
   cursor: pointer;
   padding: 30px 0;
+  margin: 10px 0;
   font-size: var(--big-font-size);
   transition: 0.25s;
 }
@@ -511,6 +519,17 @@ footer a {
   padding: 10px;
   border-radius: 100%;
   transition: 0.25s;
+}
+.portfolio-page h1 {
+  font-size: var(--big-font-size);
+}
+.portfolio-page .gallery-3cols {
+  display: grid;
+  justify-content: center;
+}
+.portfolio-page .gallery-3cols * {
+  align-self: center;
+  justify-self: center;
 }
 .portfolio-page#sveteshti-reklami {
   background: #16ce60;
@@ -526,6 +545,19 @@ footer a {
 }
 .portfolio-page#sveteshti-reklami .return-button:hover i {
   background: #0f8940;
+}
+.portfolio-page#sveteshti-reklami .gallery-3cols {
+  grid-template-areas: "img1 img2 img3" "img4 img5 img3";
+}
+@media screen and (max-width: 1024px) {
+  .portfolio-page#sveteshti-reklami .gallery-3cols {
+    grid-template-areas: "img1 img3" "img2 img3" "img4 img5";
+  }
+}
+@media screen and (max-width: 480px) {
+  .portfolio-page#sveteshti-reklami .gallery-3cols {
+    grid-template-areas: "img1" "img2" "img3" "img4" "img5";
+  }
 }
 .portfolio-page#nesveteshti-reklami {
   background: #10d2f6;
@@ -601,6 +633,31 @@ footer a {
 }
 .portfolio-page#suvenirna-reklama .return-button:hover i {
   background: #0f5889;
+}
+
+.gallery-3cols {
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-row-gap: 20px;
+  grid-column-gap: 20px;
+}
+.gallery-3cols img {
+  max-width: 30vw;
+}
+@media screen and (max-width: 1024px) {
+  .gallery-3cols {
+    grid-template-columns: 1fr 1fr;
+  }
+  .gallery-3cols img {
+    max-width: 45vw;
+  }
+}
+@media screen and (max-width: 480px) {
+  .gallery-3cols {
+    grid-template-columns: 1fr;
+  }
+  .gallery-3cols img {
+    max-width: 80vw;
+  }
 }
 
 .hidden {

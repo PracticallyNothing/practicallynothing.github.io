@@ -287,8 +287,7 @@ body {
 .collapsable.section {
 	text-align: center;
 	font-size: var(--big-font-size);
-	@media screen and (max-width: 800px)
-	{
+	@media screen and (max-width: 800px) {
 		font-size: calc(var(--big-font-size) - 6pt);
 	}
 	background-color: darken($bg-1, 2.5%);
@@ -308,9 +307,7 @@ body {
 			background-color: lighten($bg-1,15%);
 		}
 
-		p {
-			margin: 0;
-		}
+		p { margin: 0; }
 	}
 }
 
@@ -348,6 +345,7 @@ footer {
 
 #menu {
 	display: grid;
+	min-height: 75vh;
 	grid-template-columns: 1fr 1fr 1fr;
 	justify-content: center;
 	align-content: center;
@@ -367,7 +365,6 @@ footer {
 	.button {
 		display: grid;
 		width: 25vw;
-		height: 300px;
 		margin: 20px;
 		justify-self: center;
 		align-self: center;
@@ -387,7 +384,7 @@ footer {
 		
 		p {
 			font-family: 'Marck Script', cursive;
-			font-size: var(--big-font-size);
+			font-size: 20pt;
 		}
 	}
 }
@@ -410,11 +407,11 @@ footer {
 	top: 0px;
 	left: 100%;
 	width: 100vw;
-	height: 500px;
 
 	.return-button {
 		cursor: pointer;
 		padding: 30px 0;
+		margin: 10px 0;
 		font-size: var(--big-font-size);
 		i { 
 			padding: 10px;
@@ -424,9 +421,44 @@ footer {
 		transition: 0.25s;
 	}
 
+	h1 { font-size: var(--big-font-size); }
+
+	.gallery-3cols { 
+		display: grid; 
+		justify-content: center; 
+
+		* {
+			align-self: center; 
+			justify-self: center; 
+		}
+
+
+	}
+
 	&#sveteshti-reklami {
 		background: $bg-2; 
 		@include setup-return-button($bg-2);
+
+		.gallery-3cols {
+			grid-template-areas:
+			"img1 img2 img3"
+			"img4 img5 img3";
+
+			@media screen and (max-width: 1024px) {
+				grid-template-areas:
+				"img1 img3"
+				"img2 img3"
+				"img4 img5";
+			}
+			@media screen and (max-width: 480px) {
+				grid-template-areas:
+				"img1"
+				"img2"
+				"img3"
+				"img4"
+				"img5";
+			}
+		}
 	}
 	&#nesveteshti-reklami { 
 		background: $bg-3; 
@@ -451,6 +483,22 @@ footer {
 
 }
 
+.gallery-3cols {
+	grid-template-columns: 1fr 1fr 1fr;
+	grid-row-gap: 20px;
+	grid-column-gap: 20px;
+	img { max-width: 30vw; }
+
+	@media screen and (max-width: 1024px) {
+		grid-template-columns: 1fr 1fr;
+		img { max-width: 45vw; }
+	}
+
+	@media screen and (max-width: 480px) {
+		grid-template-columns: 1fr;
+		img { max-width: 80vw; }
+	}
+}
 .hidden { display: none !important; }
 
 @keyframes anim {
