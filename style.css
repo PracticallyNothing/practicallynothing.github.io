@@ -311,8 +311,6 @@ body {
   display: grid;
   justify-content: center;
   grid-template-areas: "icon title" "icon text";
-  grid-template-rows: 1fr 1fr;
-  grid-template-columns: 1fr 2fr;
   padding: 10px;
   background-color: #06839a;
 }
@@ -338,6 +336,7 @@ body {
 }
 #why-choose-us div:nth-child(even) {
   background-color: #09c2e4;
+  color: #211;
 }
 @media screen and (max-width: 1024px) {
   #why-choose-us div {

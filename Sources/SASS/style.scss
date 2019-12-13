@@ -223,9 +223,6 @@ body {
 		"icon title"
 		"icon text";
 
-		grid-template-rows: 1fr 1fr;
-		grid-template-columns: 1fr 2fr;
-
 		* { padding: 0 20px; }
 
 		img { 
@@ -250,6 +247,7 @@ body {
 		background-color: darken($bg-3, 20%);
 		&:nth-child(even) {
 			background-color: darken($bg-3, 5%);
+			color: #211;
 		}
 
 		@media screen and (max-width: 1024px) {
