@@ -535,6 +535,80 @@ footer {
 	}
 }
 
+@keyframes slidein-left-2 {
+	from { transform: translateX(-200%); }
+	to { transform: translateX(0); }
+}
+@keyframes slidein-right-2 {
+	from { transform: translateX(200%); }
+	to { transform: translateX(0); }
+}
+
+.alt-img-text {
+	div {
+		display: grid;
+		grid-template-areas: 
+		"img title"
+		"img text";
+
+		justify-content: center;
+		align-content: center;
+		grid-column-gap: 20px;
+		grid-row-gap: 20px;
+
+		padding: 30px;
+
+		@media screen and (max-width: 480px) {
+			grid-template-areas:
+			"img"
+			"title"
+			"text" !important;
+			* { justify-self: center !important; text-align: center; }
+			img { max-width: 80vw !important; }
+		}
+
+		&:nth-child(even) {
+			grid-template-areas: 
+			"title img"
+			"text  img";
+
+			* { animation: slidein-right-2 1s; }
+		}
+
+		* { animation: slidein-left-2 1s; }
+
+		img {
+			grid-area: img; 
+			justify-self: center;
+			align-self: center;
+			max-width: 45vw;
+			height: auto;
+		}
+
+		h1, p { justify-self: start; }
+
+		h1 { 
+			grid-area: title;
+			align-self: end;
+			font-size: var(--big-font-size);
+			margin-bottom: 10px;
+		}
+		p {
+			grid-area: text;
+			align-self: start;
+			font-size: var(--sub-font-size);
+			margin-top: 0;
+		}
+	}
+}
+
+.alt-colors {
+	div:nth-child(4n + 0) { background: linear-gradient(to right, $bg-2, darken($bg-2, 15%)); }
+	div:nth-child(4n + 1) { background: linear-gradient(to left , $bg-3, darken($bg-3, 15%)); }
+	div:nth-child(4n + 2) { background: linear-gradient(to right, $bg-4, darken($bg-4, 15%)); }
+	div:nth-child(4n + 3) { background: linear-gradient(to left , $bg-5, darken($bg-5, 15%)); }
+}
+
 #portfolio-title { 
 	@include title-setup($bg-4); 
 }
