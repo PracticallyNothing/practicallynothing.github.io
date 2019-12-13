@@ -603,11 +603,34 @@ footer a {
 }
 @media screen and (max-width: 1024px) {
   .gallery-3cols {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
   }
 }
 @media screen and (max-width: 480px) {
   .gallery-3cols {
+    grid-template-columns: 1fr;
+  }
+}
+
+.gallery-5cols {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-row-gap: 20px;
+  grid-column-gap: 20px;
+}
+.gallery-5cols * {
+  align-self: center;
+}
+.gallery-5cols img {
+  max-width: 100%;
+}
+@media screen and (max-width: 1024px) {
+  .gallery-5cols {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+@media screen and (max-width: 480px) {
+  .gallery-5cols {
     grid-template-columns: 1fr;
   }
 }
@@ -690,7 +713,7 @@ footer a {
   align-content: center;
   grid-column-gap: 50px;
   grid-row-gap: 20px;
-  padding: 30px;
+  padding: 30px 15vw;
 }
 @media screen and (max-width: 800px) {
   .alt-img-text div {
@@ -723,6 +746,7 @@ footer a {
   align-self: center;
   max-width: 45vw;
   height: auto;
+  box-shadow: 3px 3px 5px black;
 }
 .alt-img-text div h1, .alt-img-text div p {
   justify-self: start;
@@ -743,17 +767,11 @@ footer a {
 .alt-colors {
   color: white;
 }
-.alt-colors div:nth-child(4n+0) {
-  background: linear-gradient(to right, #16ce60, #0f8940);
+.alt-colors div:nth-child(2n+0) {
+  background-color: #11a04b;
 }
-.alt-colors div:nth-child(4n+1) {
-  background: linear-gradient(to left, #10d2f6, #0798b3);
-}
-.alt-colors div:nth-child(4n+2) {
-  background: linear-gradient(to right, #ce6016, #89400f);
-}
-.alt-colors div:nth-child(4n+3) {
-  background: linear-gradient(to left, #ce1629, #890f1b);
+.alt-colors div:nth-child(2n+1) {
+  background-color: #08adcb;
 }
 
 #portfolio-title {
