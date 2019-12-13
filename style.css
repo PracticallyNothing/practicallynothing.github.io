@@ -48,12 +48,6 @@
     opacity: 100;
   }
 }
-/*
-@font-face {
-	font-family: "art-style-logo-font";
-	src: url("./Font/PFDinTextCompPro-Regular.ttf");
-}
-*/
 header {
   -webkit-user-select: none;
   /* Safari */
@@ -67,6 +61,7 @@ header {
   top: 0px;
   z-index: 100;
   height: 75px;
+  font-size: var(--sub-2-font-size);
   background: #252524;
   color: white;
   text-align: center;
@@ -102,6 +97,7 @@ header i {
   color: #73736e;
 }
 header h1 {
+  font-family: "Ubuntu", serif;
   padding: 10px;
   display: block;
   transition: 0.25s;
@@ -129,8 +125,12 @@ header:hover ul {
   transform: translate(-50%, -50%) rotateX(0);
 }
 
+@font-face {
+  font-family: "art-style-font";
+  src: url("Font/PFDinTextCompPro-Regular.ttf");
+}
 html {
-  font-family: "Ubuntu", serif;
+  font-family: "art-style-font", serif;
 }
 
 :root {
@@ -205,9 +205,7 @@ body {
   background: #14b755;
   border-bottom: 20px solid #0c7235;
   border-top: 20px solid #23f477;
-  padding: 25px 0;
-  grid-template-areas: "title gallery gallery gallery" "text  gallery gallery gallery" "link  gallery gallery gallery";
-  grid-template-columns: 2fr 1fr 1fr 1fr;
+  grid-template-areas: "title . gallery" "text  . gallery" "link  . gallery";
   grid-row-gap: 10px;
   color: white;
   text-align: center;
@@ -282,6 +280,7 @@ body {
   display: grid;
   justify-content: center;
   grid-template-areas: "icon title" "icon text";
+  grid-template-columns: 1fr 2fr;
   padding: 10px;
   background-color: #06839a;
 }
@@ -427,17 +426,22 @@ footer a {
   color: white;
   background: #181817;
   position: relative;
+  padding: 0 6vw;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
 }
 .menu .button {
   display: grid;
-  width: 25vw;
-  margin: 20px;
   justify-self: center;
   align-self: center;
-  background: #ce1629;
-  border: 10px groove #ce1629;
-  border-bottom: 10px ridge #ce1629;
-  border-right: 10px ridge #ce1629;
+  background: #11a04b;
+  border: 10px groove #11a04b;
+  border-bottom: 10px ridge #11a04b;
+  border-right: 10px ridge #11a04b;
+  width: 80%;
+  height: 80%;
+  margin: 20px;
+  padding: 10px;
   transition: 0.25s;
 }
 @media screen and (max-width: 1024px) {
@@ -452,11 +456,12 @@ footer a {
 }
 .menu .button:hover {
   cursor: pointer;
-  background: #e92e42;
+  background: #14b755;
 }
 .menu .button p {
-  font-family: "Marck Script", cursive;
-  font-size: 20pt;
+  font-family: "art-style-font", cursive;
+  font-size: var(--big-font-size);
+  align-self: center;
 }
 
 .portfolio-page {
@@ -516,80 +521,35 @@ footer a {
     grid-template-areas: "img1" "img2" "img3" "img4" "img5";
   }
 }
-.portfolio-page#nesveteshti-reklami {
-  background: #10d2f6;
+.portfolio-page:nth-child(odd) {
+  background: #11a04b;
 }
-.portfolio-page#nesveteshti-reklami .return-button {
-  background: #09c2e4;
+.portfolio-page:nth-child(odd) .return-button {
+  background: #0f8940;
 }
-.portfolio-page#nesveteshti-reklami .return-button i {
+.portfolio-page:nth-child(odd) .return-button i {
+  background: #0c7235;
+}
+.portfolio-page:nth-child(odd) .return-button:hover {
+  background: #0c7235;
+}
+.portfolio-page:nth-child(odd) .return-button:hover i {
+  background: #0a5b2a;
+}
+.portfolio-page:nth-child(even) {
   background: #08adcb;
 }
-.portfolio-page#nesveteshti-reklami .return-button:hover {
-  background: #08adcb;
-}
-.portfolio-page#nesveteshti-reklami .return-button:hover i {
+.portfolio-page:nth-child(even) .return-button {
   background: #0798b3;
 }
-.portfolio-page#interiorni-resheniq {
-  background: #ce6016;
+.portfolio-page:nth-child(even) .return-button i {
+  background: #06839a;
 }
-.portfolio-page#interiorni-resheniq .return-button {
-  background: #b75514;
+.portfolio-page:nth-child(even) .return-button:hover {
+  background: #06839a;
 }
-.portfolio-page#interiorni-resheniq .return-button i {
-  background: #a04b11;
-}
-.portfolio-page#interiorni-resheniq .return-button:hover {
-  background: #a04b11;
-}
-.portfolio-page#interiorni-resheniq .return-button:hover i {
-  background: #89400f;
-}
-.portfolio-page#reklamni-konstr {
-  background: #ce1629;
-}
-.portfolio-page#reklamni-konstr .return-button {
-  background: #b71424;
-}
-.portfolio-page#reklamni-konstr .return-button i {
-  background: #a01120;
-}
-.portfolio-page#reklamni-konstr .return-button:hover {
-  background: #a01120;
-}
-.portfolio-page#reklamni-konstr .return-button:hover i {
-  background: #890f1b;
-}
-.portfolio-page#brandirane-avto {
-  background: #6016ce;
-}
-.portfolio-page#brandirane-avto .return-button {
-  background: #5514b7;
-}
-.portfolio-page#brandirane-avto .return-button i {
-  background: #4b11a0;
-}
-.portfolio-page#brandirane-avto .return-button:hover {
-  background: #4b11a0;
-}
-.portfolio-page#brandirane-avto .return-button:hover i {
-  background: #400f89;
-}
-.portfolio-page#suvenirna-reklama {
-  background: #1685ce;
-}
-.portfolio-page#suvenirna-reklama .return-button {
-  background: #1476b7;
-}
-.portfolio-page#suvenirna-reklama .return-button i {
-  background: #1167a0;
-}
-.portfolio-page#suvenirna-reklama .return-button:hover {
-  background: #1167a0;
-}
-.portfolio-page#suvenirna-reklama .return-button:hover i {
-  background: #0f5889;
+.portfolio-page:nth-child(even) .return-button:hover i {
+  background: #056e82;
 }
 
 .gallery-3cols {
@@ -603,7 +563,7 @@ footer a {
 }
 @media screen and (max-width: 1024px) {
   .gallery-3cols {
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
   }
 }
 @media screen and (max-width: 480px) {
@@ -656,7 +616,9 @@ footer a {
   }
 }
 .page-title {
-  font-family: "Marck Script", cursive;
+  background-color: #11788b;
+  /*font-family: 'Marck Script', cursive;*/
+  font-family: "art-style-font", cursive;
   font-size: var(--sub-font-size);
   color: white;
   text-align: center;
@@ -664,6 +626,9 @@ footer a {
   display: flex;
   align-items: center;
   text-align: center;
+}
+.page-title:before, .page-title:after {
+  border-bottom: 10px solid #11788b;
 }
 .page-title h1 {
   -webkit-user-select: none;
@@ -714,6 +679,9 @@ footer a {
   grid-column-gap: 50px;
   grid-row-gap: 20px;
   padding: 30px 15vw;
+}
+.alt-img-text div-no-anims {
+  animation: 0s;
 }
 @media screen and (max-width: 800px) {
   .alt-img-text div {
@@ -774,33 +742,6 @@ footer a {
   background-color: #08adcb;
 }
 
-#portfolio-title {
-  background-color: #ce6016;
-}
-#portfolio-title:before, #portfolio-title:after {
-  border-bottom: 10px solid #89400f;
-}
-
-#prods-services-title {
-  background-color: #ce1629;
-}
-#prods-services-title:before, #prods-services-title:after {
-  border-bottom: 10px solid #890f1b;
-}
-
-#machines-title {
-  background-color: #6016ce;
-}
-#machines-title:before, #machines-title:after {
-  border-bottom: 10px solid #400f89;
-}
-
-#contact-title {
-  background-color: #1685ce;
-}
-#contact-title:before, #contact-title:after {
-  border-bottom: 10px solid #0f5889;
-}
 #contact-title:after {
   margin-left: 25px;
 }

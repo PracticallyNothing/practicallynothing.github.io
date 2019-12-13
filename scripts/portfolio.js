@@ -2,6 +2,8 @@ let menu = document.getElementsByClassName("menu")[0];
 let initialMenuHeight = menu.clientHeight;
 let activePage = null
 
+console.log("HELLO")
+
 function init() {
 	let elems = document.getElementsByClassName("button");
 	for(let i = 0; i < elems.length; i++) {
