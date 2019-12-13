@@ -588,7 +588,7 @@ footer {
 			align-self: center;
 			max-width: 45vw;
 			height: auto;
-			box-shadow: 3px 3px 5px black;
+			box-shadow: 5px 5px 5px lighten(black, 25%);
 		}
 
 		h1, p { justify-self: start; }

@@ -714,7 +714,7 @@ footer a {
   align-self: center;
   max-width: 45vw;
   height: auto;
-  box-shadow: 3px 3px 5px black;
+  box-shadow: 5px 5px 5px #404040;
 }
 .alt-img-text div h1, .alt-img-text div p {
   justify-self: start;
