@@ -13,15 +13,18 @@ function updateHeader()
 	}
 }
 
+header.addEventListener("touchmove", (e) => {
+	e.preventDefault();
+});
+
 function isChild(parent, child) {
-     var node = child.parentNode;
-     while (node != null) {
-         if (node == parent) {
-             return true;
-         }
-         node = node.parentNode;
-     }
-     return false;
+	var node = child.parentNode;
+	while (node != null) {
+		if (node == parent)
+			return true;
+		node = node.parentNode;
+	}
+	return false;
 }
 
 updateHeader()
