@@ -1,0 +1,205 @@
+#intro {
+	background-size: 100% 100%;
+	background-image: url("images/bg.png");
+	position: relative;
+
+	div {
+		text-align: center;
+		@include centered-absolute;
+		img {
+			animation: 1s ease slidein-right;
+			width: 80vmin;
+			height: auto; 
+			background: darken($bg-1, 6%);
+			padding: 40px;
+			border-radius: 35px;
+		}
+	}
+}
+
+#portfolio-demo {
+	display: grid;
+	background: darken($bg-2, 5%);
+	padding: 20px 0;
+	border-bottom: 20px solid darken($bg-2, 20%);
+	border-top: 20px solid saturate(lighten($bg-2, 10%), 10%);
+
+	grid-template-areas:
+	". title gallery ."
+	". text  gallery ."
+	". link  gallery .";
+	grid-column-gap: 20px;
+
+	color: white;
+
+	@media screen and (max-width: 1024px) {
+		grid-template-areas:
+		"title"
+		"text"
+		"gallery"
+		"link";
+		grid-template-columns: 1fr;
+		grid-row-gap: 10px;
+		p { max-width: 80vw !important; }
+	}
+
+	* { justify-self: center; align-self: center; }
+	text-align: center;
+
+	.gallery-3cols, gallery-5cols { 
+		grid-area: gallery; 
+	}
+
+	h1 { 
+		grid-area: title;
+		margin-bottom: 0;
+	}
+
+	p { 
+		grid-area: text; 
+		font-size: 2em;
+		max-width: 60ch;
+
+		@media screen and (max-width: 480px) {
+			font-size: 1.7em;
+		}
+	}
+
+	a {
+		grid-area: link;
+
+		background: darken($bg-2, 15%);
+		color: white;
+		transition: 0.25s;
+
+		font-size: 2em;
+		text-align: center;
+		text-decoration: none;
+
+		padding: 15px 15px;
+		margin-bottom: 10px;
+		border-radius: 20px;
+
+		&:hover { background: darken($bg-2, 25%); }
+
+		i {
+			border-radius: 100%;
+			background: darken($bg-2, 20%);
+			padding: 5px;
+		}
+	}
+	img { justify-self: center; }
+}
+
+#why-choose-us {
+	display: grid;
+	background: darken($bg-3, 15%);
+	padding-bottom: 50px;
+	color: white;
+	justify-content: center;
+	grid-template-columns: 30vw 30vw 30vw;
+	grid-template-areas:
+	"title title title"
+	"reason-1 reason-2 reason-3"
+	"reason-4 reason-5 reason-6";
+	text-align: center;
+	@media screen and (max-width: 1280px) {
+		grid-template-areas:
+		"title title"
+		"reason-1 reason-3"
+		"reason-2 reason-4"
+		"reason-5 reason-6";
+		grid-template-columns: 45vw 45vw;
+	}
+
+	@media screen and (max-width: 1024px) {
+		grid-template-areas:
+		"title"
+		"reason-1";
+		grid-template-columns: 80vw;
+	}
+
+	&>h1 {
+		grid-area: title;
+		justify-self: center;
+		align-self: center;
+	}
+
+	div {
+		text-align: initial;
+		display: grid;
+		justify-content: center;
+		grid-template-areas:
+		"icon title"
+		"icon text";
+		grid-template-columns: 1fr 2fr;
+
+		* { padding: 0 20px; }
+
+		img { 
+			width: 100%;
+			height: auto;
+			grid-area: icon; 
+			justify-self: center;
+			align-self: center;
+		}
+		h1 { 
+			grid-area: title; 
+			justify-self: start;
+			align-self: end;
+			margin-bottom: 0;
+			font-size: 3em;
+		}
+		p { 
+			grid-area: text; 
+			align-self: start;
+			font-size: 2em;
+		}
+		padding: 10px;
+
+		background-color: darken($bg-3, 20%);
+		&:nth-of-type(even) {
+			background-color: darken($bg-3, 10%);
+		}
+
+		@media screen and (min-width: 1024) and (max-width: 1280px)
+		{
+			&:nth-of-type(1) { background-color: darken($bg-3, 20%); }
+			&:nth-of-type(2) { background-color: darken($bg-3, 10%); }
+			&:nth-of-type(3) { background-color: darken($bg-3, 10%); }
+			&:nth-of-type(4) { background-color: darken($bg-3, 20%); }
+			&:nth-of-type(5) { background-color: darken($bg-3, 20%); }
+			&:nth-of-type(6) { background-color: darken($bg-3, 10%); }
+		}
+
+		@media screen and (max-width: 1024px) {
+			padding: 30px 0;
+			grid-template-columns: 75vw;
+			grid-template-rows: auto;
+
+			grid-template-areas:
+			"icon"
+			"title"
+			"text";
+
+			text-align: center;
+
+			img {
+				width: 40vw;
+				height: auto; 
+
+				@media screen and (orientation: landscape) { 
+					width: auto;
+					height: 40vh; 
+				}
+			}
+
+			h1 { 
+				margin: 0;
+				padding: 0; 
+				justify-self: center;
+				align-self: center;
+			}
+		}
+	}
+}

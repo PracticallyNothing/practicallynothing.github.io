@@ -1,0 +1,105 @@
+.contact-location {
+	background: darken($bg-2, 10%);
+	text-align: center;
+
+	div {
+		display: inline-grid;
+		padding: 20px;
+		justify-content: center;
+		align-content: center;
+
+		grid-template-areas:
+		"sub1 sub2"
+		"exp1 exp2"
+		"map1 map2"
+		;
+
+		color: white;
+		text-align: center;
+		grid-column-gap: 20px;
+
+		h2 {
+			align-self: end;
+			margin: 5px 0;
+			grid-area: sub1;
+			&:nth-of-type(2) { grid-area: sub2; }
+		}
+
+
+		h3 {
+			grid-area: exp1;
+			&:nth-of-type(even) { grid-area: exp2; }
+		}
+
+		iframe {
+			width: 40vw;
+			height: 40vw;
+			justify-self: center;
+			align-self: center;
+			box-shadow: 3px 3px 5px black;
+			background: darken($bg-2, 15%); 
+		}
+
+		@media screen and (max-width: 1024px) {
+			grid-template-areas:
+			"sub1"
+			"exp1"
+			"map1"
+			"sub2"
+			"exp2"
+			"map2";
+			h2:nth-of-type(even) { margin-top: 80px; }
+
+			iframe {
+				width: 80vw;
+				height: 80vw;
+			}
+		}
+	}
+}
+
+form {
+	display: grid;
+	background: darken($bg-3, 15%);
+	grid-template-columns: 80vw;
+	grid-row-gap: 20px;
+	justify-content: center;
+	align-content: center;
+	margin: 0;
+	padding: 30px;
+	text-align: center;
+	color: white;
+
+	h1 { margin: 10px 0; }
+	textarea { resize: none; }
+
+	input, textarea, button { 
+		border-radius: 5px;
+		padding: 14px;
+		font-size: 1.4em;
+		font-family: serif; 
+	}
+
+	button {
+		font-family: 'art-style-font', serif;
+		background: darken($bg-3, 5%);
+		font-size: 3em;
+		transition: 0.15s;
+		padding: 10px;
+		border-radius: 10px;
+		border-bottom: 2px solid gray;
+
+		text-decoration: none;
+		color: white;
+		&:hover { 
+			cursor: pointer;
+			background: darken($bg-3, 10%); 
+		}
+
+		&:active {
+			border-bottom: 0px solid gray;
+			border-top: 3px solid gray;
+		}
+	}
+}
+

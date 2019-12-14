@@ -1,4 +1,4 @@
-let menu = document.getElementsByClassName("menu")[0];
+let menu = document.getElementsByClassName("multipage-main")[0];
 let initialMenuHeight = menu.clientHeight;
 let activePage = null
 
@@ -53,7 +53,7 @@ function show(section) {
 		iterations: 1, 
 		fill: "forwards"
 	});
-	let page = document.querySelector(".portfolio-page#" + section.id);
+	let page = document.querySelector(".multipage-page#" + section.id);
 
 	page.classList.remove("hidden");
 	activePage = page;

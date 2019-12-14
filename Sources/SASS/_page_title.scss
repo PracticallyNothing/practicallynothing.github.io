@@ -1,0 +1,40 @@
+.page-title {
+	$bg-color: darken(#19b3cf, 15%);
+	background-color: $bg-color;
+	&:before, &:after { 
+		border-bottom: 10px solid $bg-color;
+	}
+
+	font-family: 'art-style-font', cursive;
+	color: white;
+	text-align: center;
+	padding: 20px 0;
+	h1 { 
+		@include unselectable;
+		white-space: nowrap; 
+		margin: 0; 
+	}
+
+	display: flex;
+	align-items: center;
+	text-align: center;
+
+	&:before, &:after { 
+		content: "";
+		flex: 1;
+		border-bottom: 10px solid darken($bg-color, 10%);
+		margin: 0 20px;
+
+		@media screen and (max-width: 480px) {
+			margin: 0 5px;
+		}
+	}
+
+	&:before, &:after {
+		animation-duration: 1s;
+		animation-timing-function: ease;
+	}
+
+	&:before { animation-name: page-title-left-line; }
+	&:after  { animation-name: page-title-right-line; }
+}

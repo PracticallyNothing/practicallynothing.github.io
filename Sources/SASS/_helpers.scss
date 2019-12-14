@@ -1,0 +1,15 @@
+body {
+	margin: 0;
+	overflow-x: hidden;
+}
+
+div.under-header { height: 50px; }
+.hidden { display: none !important; }
+
+.section {
+	width: 100vw;
+	&-25vh { min-height: 25vh; }
+	&-50vh { min-height: 50vh; }
+	&-75vh { min-height: 75vh; }
+	&-100vh { min-height: 100vh; }
+}

@@ -1,0 +1,143 @@
+@mixin setup-return-button($bg-color) {
+	.return-button {
+		background: darken($bg-color, 5%);
+
+		i { background: darken($bg-color, 10%); }
+
+		&:hover {
+			background: darken($bg-color, 10%);
+			i { background: darken($bg-color, 15%); }
+		}
+	}
+}
+
+.multipage {
+	&-main {
+		min-height: 75vh;
+		justify-content: center;
+		align-content: center;
+		text-align: center;
+		color: white;
+		background-image: url("images/bg.png");
+		background-repeat: no-repeat;
+		background-size: 100% 100%;
+		position: relative;
+		padding: 0 6vw;
+
+		grid-template-columns: 1fr 1fr 1fr;
+		grid-template-rows: 1fr 1fr;
+
+		.button {
+			border-radius: 25px;
+			display: grid;
+			justify-self: center;
+			align-self: center;
+
+			$bg-color: darken($bg-2, 10%); 
+			background-color: rgba(0, 0, 0, 0);
+			
+			border:        10px groove $bg-color;
+			border-bottom: 10px ridge  $bg-color;
+			border-right:  10px ridge  $bg-color;
+
+			width: 80%;
+			height: 80%;
+
+			margin: 20px;
+
+			transition: 0.25s;
+
+			@media screen and (max-width: 1024px) { width: 35vw; }
+			@media screen and (max-width: 480px) { width: 90vw; }
+
+			&:hover {
+				cursor: pointer;
+				background-color: lighten($bg-color, 5%);
+			}
+
+			p {
+				font-family: 'art-style-font', cursive;
+				text-shadow: 3px 3px 5px black;
+				align-self: center;
+				font-size: 4em;
+				max-width: 80%;
+				justify-self: center;
+				line-height: initial;
+
+				@media screen and (max-width: 1280px) {
+					font-size: 2em;
+				}
+			}
+		}
+	}
+
+	&-page {
+		position: absolute;
+		top: 0px;
+		left: 100%;
+		width: 100vw;
+
+		img { border-radius: 15px; }
+
+		.return-button {
+			cursor: pointer;
+			padding: 20px 0;
+			margin: 10px 0;
+			i { 
+				padding: 10px;
+				border-radius: 100%;
+				transition: 0.25s; 
+				font-size: 2em;
+			}
+			transition: 0.25s;
+		}
+
+		.gallery-3cols, .gallery-5cols { 
+			display: grid; 
+			justify-content: center; 
+
+			* {
+				align-self: center; 
+				justify-self: center; 
+			}
+
+			img {
+				box-shadow: 3px 3px 5px black;
+			}
+		}
+
+		&#sveteshti-reklami {
+			background: $bg-2; 
+			@include setup-return-button($bg-2);
+
+			.gallery-3cols {
+				grid-template-areas:
+				"img1 img2 img3"
+				"img4 img5 img3";
+
+				@media screen and (max-width: 1024px) {
+					grid-template-areas:
+					"img1 img3"
+					"img2 img3"
+					"img4 img5";
+				}
+				@media screen and (max-width: 480px) {
+					grid-template-areas:
+					"img1"
+					"img2"
+					"img3"
+					"img4"
+					"img5";
+				}
+			}
+		}
+		&:nth-child(odd) { 
+			background: darken($bg-2, 10%);
+			@include setup-return-button(darken($bg-2, 10%));
+		}
+		&:nth-child(even) { 
+			background: darken($bg-3, 10%);
+			@include setup-return-button(darken($bg-3, 10%));
+		}
+	}
+}

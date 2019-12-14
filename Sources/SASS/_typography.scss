@@ -1,0 +1,33 @@
+@import url("https://use.fontawesome.com/releases/v5.11.2/css/all.css");
+@import url('https://fonts.googleapis.com/css?family=Marck+Script|Ubuntu&display=swap');
+
+@font-face {
+	font-family: "art-style-font";
+	src: url("Font/PFDinTextCompPro-Regular.ttf");
+}
+
+html { 
+	font-size: 14px;
+	font-family: 'art-style-font', serif;
+}
+
+h1{
+	font-size: 4em;
+	@media screen and (max-width: 800px) {
+		font-size: 3em;
+	}
+}
+
+h2{
+	font-size: 2.5em;
+}
+
+h3{
+	font-size: 1.6em;
+	line-height: 1.618em;
+}
+
+p{
+	font-size: 1.6em;
+	line-height: 1.618em;
+}
