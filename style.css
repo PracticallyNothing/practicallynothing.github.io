@@ -61,7 +61,6 @@ header {
   top: 0px;
   z-index: 100;
   height: 75px;
-  font-size: var(--sub-2-font-size);
   background: #252524;
   color: white;
   text-align: center;
@@ -77,6 +76,7 @@ header ul {
   min-width: 760px;
   text-align: center;
   transition: 0.25s;
+  white-space: nowrap;
 }
 header ul li {
   display: inline-block;
@@ -84,19 +84,26 @@ header ul li {
   margin: 0 5px;
 }
 header ul li a {
+  background: #3f3f3c;
+  font-size: 2em;
   transition: 0.25s;
   padding: 10px;
   border-radius: 10px;
+  border-bottom: 2px solid gray;
   text-decoration: none;
   color: white;
 }
 header ul li a:hover {
   background: #181817;
 }
+header ul li a:active {
+  border-bottom: 0px solid gray;
+  border-top: 3px solid gray;
+}
 header i {
   color: #73736e;
 }
-header h1 {
+header h1, header h2, header h3 {
   font-family: "Ubuntu", serif;
   padding: 10px;
   display: block;
@@ -106,18 +113,18 @@ header h1 {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  min-width: 135px;
+  white-space: nowrap;
 }
-header h1 #art {
+header h1 #art, header h2 #art, header h3 #art {
   color: #bee826;
 }
-header h1 #style {
+header h1 #style, header h2 #style, header h3 #style {
   color: #10d2f6;
 }
 header:hover {
   text-align: left;
 }
-header:hover h1 {
+header:hover h1, header:hover h2, header:hover h3 {
   transform: translate(-50%, -60%) rotateX(90deg);
 }
 header:hover ul {
@@ -130,41 +137,31 @@ header:hover ul {
   src: url("Font/PFDinTextCompPro-Regular.ttf");
 }
 html {
+  font-size: 14px;
   font-family: "art-style-font", serif;
 }
 
-:root {
-  --big-font-size: 35pt;
-  --sub-font-size: 22pt;
-  --sub-2-font-size: 18pt;
+h1 {
+  font-size: 4em;
 }
 @media screen and (max-width: 800px) {
-  :root {
-    --big-font-size: 27pt;
-    --sub-font-size: 20pt;
-    --sub-2-font-size: 16pt;
+  h1 {
+    font-size: 3em;
   }
 }
-@media screen and (max-width: 600px) {
-  :root {
-    --big-font-size: 25pt;
-    --sub-font-size: 16pt;
-    --sub-2-font-size: 14pt;
-  }
+
+h2 {
+  font-size: 2.5em;
 }
-@media screen and (max-width: 480px) {
-  :root {
-    --big-font-size: 18pt;
-    --sub-font-size: 15pt;
-    --sub-2-font-size: 15pt;
-  }
+
+h3 {
+  font-size: 1.6em;
+  line-height: 1.618em;
 }
-@media screen and (max-width: 375px) {
-  :root {
-    --big-font-size: 16pt;
-    --sub-font-size: 10pt;
-    --sub-2-font-size: 10pt;
-  }
+
+p {
+  font-size: 1.6em;
+  line-height: 1.618em;
 }
 
 body {
@@ -186,73 +183,75 @@ body {
 }
 #intro div img {
   animation: 1s ease-out 0s 1 slidein-right;
-  width: 80vw;
+  width: 80vmin;
   height: auto;
-}
-@media screen and (orientation: landscape) {
-  #intro div img {
-    width: auto;
-    height: 60vh;
-  }
 }
 #intro div p {
   animation: 1.15s ease-out 0s 1 slidein-right;
-  font-size: var(--sub-font-size);
 }
 
-#portfolio {
+#portfolio-demo {
   display: grid;
   background: #14b755;
   border-bottom: 20px solid #0c7235;
   border-top: 20px solid #23f477;
-  grid-template-areas: "title . gallery" "text  . gallery" "link  . gallery";
-  grid-row-gap: 10px;
+  grid-template-areas: ". title gallery ." ". text  gallery ." ". link  gallery .";
+  grid-column-gap: 20px;
   color: white;
   text-align: center;
 }
 @media screen and (max-width: 1024px) {
-  #portfolio {
+  #portfolio-demo {
     grid-template-areas: "title" "text" "gallery" "link";
     grid-template-columns: 1fr;
+    grid-row-gap: 10px;
+  }
+  #portfolio-demo p {
+    max-width: 80vw !important;
   }
 }
-#portfolio * {
+#portfolio-demo * {
   justify-self: center;
   align-self: center;
 }
-#portfolio .gallery-3cols {
+#portfolio-demo .gallery-3cols, #portfolio-demo gallery-5cols {
   grid-area: gallery;
 }
-#portfolio h1 {
+#portfolio-demo h1 {
   grid-area: title;
   margin-bottom: 0;
-  font-size: var(--big-font-size);
 }
-#portfolio p {
+#portfolio-demo p {
   grid-area: text;
-  font-size: var(--sub-font-size);
+  font-size: 2em;
+  max-width: 60ch;
 }
-#portfolio a {
+@media screen and (max-width: 480px) {
+  #portfolio-demo p {
+    font-size: 1.7em;
+  }
+}
+#portfolio-demo a {
   grid-area: link;
   background: #0f8940;
   color: white;
   transition: 0.25s;
-  font-size: var(--sub-font-size);
+  font-size: 2em;
   text-align: center;
   text-decoration: none;
   padding: 15px 15px;
   margin-bottom: 10px;
   border-radius: 20px;
 }
-#portfolio a:hover {
+#portfolio-demo a:hover {
   background: #0a5b2a;
 }
-#portfolio a i {
+#portfolio-demo a i {
   border-radius: 100%;
   background: #0c7235;
   padding: 5px;
 }
-#portfolio img {
+#portfolio-demo img {
   justify-self: center;
 }
 
@@ -261,19 +260,21 @@ body {
   background: #0798b3;
   padding-bottom: 50px;
   color: white;
+  justify-content: center;
+  grid-template-columns: 30vw 30vw 30vw;
   grid-template-areas: "title title title" "reason-1 reason-2 reason-3" "reason-4 reason-5 reason-6";
   text-align: center;
 }
 @media screen and (max-width: 1024px) {
   #why-choose-us {
     grid-template-areas: "title" "reason-1";
+    grid-template-columns: 80vw;
   }
 }
 #why-choose-us > h1 {
   grid-area: title;
   justify-self: center;
   align-self: center;
-  font-size: var(--big-font-size);
 }
 #why-choose-us div {
   text-align: initial;
@@ -299,10 +300,12 @@ body {
   justify-self: start;
   align-self: end;
   margin-bottom: 0;
+  font-size: 3em;
 }
 #why-choose-us div p {
   grid-area: text;
   align-self: start;
+  font-size: 2em;
 }
 #why-choose-us div:nth-child(even) {
   background-color: #08adcb;
@@ -337,14 +340,8 @@ body {
 
 .collapsable.section {
   text-align: center;
-  font-size: var(--big-font-size);
   background-color: #2b2b2a;
   color: white;
-}
-@media screen and (max-width: 800px) {
-  .collapsable.section {
-    font-size: calc(var(--big-font-size) - 6pt);
-  }
 }
 .collapsable.section i {
   color: #73736e;
@@ -383,8 +380,10 @@ footer * {
   justify-self: center;
   align-self: center;
 }
-footer h1 {
+footer h1, footer h2, footer h3 {
   margin: 0;
+  padding: 0 30px;
+  border-bottom: 2px solid gray;
 }
 footer ul {
   list-style: none;
@@ -399,14 +398,31 @@ footer a {
   font-weight: bold;
   color: inherit;
 }
+footer div:nth-child(3) a i {
+  margin: 10px 0;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  transition: 0.25s;
+}
+footer div:nth-child(3) a i:hover {
+  color: #16ce60;
+}
+footer p {
+  font-size: 1.2em;
+}
 @media screen and (max-width: 800px) {
   footer {
-    grid-template-columns: 75vw;
+    grid-template-columns: 100vw;
     margin: 0 auto;
-    grid-template-rows: 190px 190px 70px;
+    grid-template-rows: auto;
+    grid-row-gap: 30px;
   }
   footer ul {
     padding-left: 15px;
+  }
+  footer div {
+    max-width: 80%;
   }
 }
 
@@ -441,7 +457,6 @@ footer a {
   width: 80%;
   height: 80%;
   margin: 20px;
-  padding: 10px;
   transition: 0.25s;
 }
 @media screen and (max-width: 1024px) {
@@ -460,8 +475,16 @@ footer a {
 }
 .menu .button p {
   font-family: "art-style-font", cursive;
-  font-size: var(--big-font-size);
   align-self: center;
+  font-size: 4em;
+  max-width: 80%;
+  justify-self: center;
+  line-height: initial;
+}
+@media screen and (max-width: 1280px) {
+  .menu .button p {
+    font-size: 2em;
+  }
 }
 
 .portfolio-page {
@@ -472,26 +495,26 @@ footer a {
 }
 .portfolio-page .return-button {
   cursor: pointer;
-  padding: 30px 0;
+  padding: 20px 0;
   margin: 10px 0;
-  font-size: var(--big-font-size);
   transition: 0.25s;
 }
 .portfolio-page .return-button i {
   padding: 10px;
   border-radius: 100%;
   transition: 0.25s;
+  font-size: 2em;
 }
-.portfolio-page h1 {
-  font-size: var(--big-font-size);
-}
-.portfolio-page .gallery-3cols {
+.portfolio-page .gallery-3cols, .portfolio-page .gallery-5cols {
   display: grid;
   justify-content: center;
 }
-.portfolio-page .gallery-3cols * {
+.portfolio-page .gallery-3cols *, .portfolio-page .gallery-5cols * {
   align-self: center;
   justify-self: center;
+}
+.portfolio-page .gallery-3cols img, .portfolio-page .gallery-5cols img {
+  box-shadow: 3px 3px 5px black;
 }
 .portfolio-page#sveteshti-reklami {
   background: #16ce60;
@@ -550,6 +573,15 @@ footer a {
 }
 .portfolio-page:nth-child(even) .return-button:hover i {
   background: #056e82;
+}
+
+.gallery-clickable img {
+  transition: 0.25s;
+  transform: scale(1);
+}
+.gallery-clickable img:hover {
+  transition: 0.25s;
+  transform: scale(1.05);
 }
 
 .gallery-3cols {
@@ -617,9 +649,7 @@ footer a {
 }
 .page-title {
   background-color: #11788b;
-  /*font-family: 'Marck Script', cursive;*/
   font-family: "art-style-font", cursive;
-  font-size: var(--sub-font-size);
   color: white;
   text-align: center;
   padding: 20px 0;
@@ -645,8 +675,13 @@ footer a {
 .page-title:before, .page-title:after {
   content: "";
   flex: 1;
-  border-bottom: 10px solid #000;
+  border-bottom: 10px solid #0b515d;
   margin: 0 20px;
+}
+@media screen and (max-width: 480px) {
+  .page-title:before, .page-title:after {
+    margin: 0 5px;
+  }
 }
 .page-title:before {
   animation: 1s ease anim;
@@ -671,6 +706,9 @@ footer a {
     transform: translateX(0);
   }
 }
+.alt-img-text .return-button {
+  display: block;
+}
 .alt-img-text div {
   display: grid;
   grid-template-areas: "img title" "img text";
@@ -683,7 +721,7 @@ footer a {
 .alt-img-text div-no-anims {
   animation: 0s;
 }
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 1280px) {
   .alt-img-text div {
     grid-template-areas: "img" "title" "text" !important;
   }
@@ -722,13 +760,11 @@ footer a {
 .alt-img-text div h1 {
   grid-area: title;
   align-self: end;
-  font-size: var(--big-font-size);
   margin-bottom: 10px;
 }
 .alt-img-text div p {
   grid-area: text;
   align-self: start;
-  font-size: var(--sub-2-font-size);
   margin-top: 0;
 }
 
@@ -742,8 +778,96 @@ footer a {
   background-color: #08adcb;
 }
 
-#contact-title:after {
-  margin-left: 25px;
+.contact-location {
+  background: #11a04b;
+  text-align: center;
+}
+.contact-location div {
+  display: inline-grid;
+  padding: 20px;
+  justify-content: center;
+  align-content: center;
+  grid-template-areas: "sub1 sub2" "exp1 exp2" "map1 map2";
+  color: white;
+  text-align: center;
+  grid-column-gap: 20px;
+}
+.contact-location div h2 {
+  align-self: end;
+  margin: 5px 0;
+  grid-area: sub1;
+}
+.contact-location div h2:nth-of-type(2) {
+  grid-area: sub2;
+}
+.contact-location div h3 {
+  grid-area: exp1;
+}
+.contact-location div h3:nth-of-type(even) {
+  grid-area: exp2;
+}
+.contact-location div iframe {
+  width: 40vw;
+  height: 40vw;
+  justify-self: center;
+  align-self: center;
+  box-shadow: 3px 3px 5px black;
+}
+@media screen and (max-width: 1024px) {
+  .contact-location div {
+    grid-template-areas: "sub1" "exp1" "map1" "sub2" "exp2" "map2";
+  }
+  .contact-location div h2:nth-of-type(even) {
+    margin-top: 80px;
+  }
+  .contact-location div iframe {
+    width: 80vw;
+    height: 80vw;
+  }
+}
+
+form {
+  display: grid;
+  background: #10d2f6;
+  grid-template-columns: 80vw;
+  grid-row-gap: 20px;
+  justify-content: center;
+  align-content: center;
+  margin: 0;
+  padding: 30px;
+  text-align: center;
+  color: white;
+}
+form h1 {
+  margin: 10px 0;
+}
+form textarea {
+  resize: none;
+}
+form input, form textarea, form button {
+  border-radius: 5px;
+  padding: 14px;
+  font-size: 1.4em;
+  font-family: serif;
+}
+form button {
+  font-family: "art-style-font", serif;
+  background: #09c2e4;
+  font-size: 3em;
+  transition: 0.15s;
+  padding: 10px;
+  border-radius: 10px;
+  border-bottom: 2px solid gray;
+  text-decoration: none;
+  color: white;
+}
+form button:hover {
+  cursor: pointer;
+  background: #08adcb;
+}
+form button:active {
+  border-bottom: 0px solid gray;
+  border-top: 3px solid gray;
 }
 
 .section {
