@@ -86,8 +86,9 @@ form {
 		font-size: 3em;
 		transition: 0.15s;
 		padding: 10px;
+		border: 0;
 		border-radius: 10px;
-		border-bottom: 2px solid gray;
+		border-bottom: 5px solid $bg-2;
 
 		text-decoration: none;
 		color: white;
@@ -97,8 +98,9 @@ form {
 		}
 
 		&:active {
-			border-bottom: 0px solid gray;
-			border-top: 3px solid gray;
+			border-bottom: 0;
+			background-color: darken($bg-3, 15%);
+			border-top: 5px solid $bg-2;
 		}
 	}
 }

@@ -1,8 +1,12 @@
 let menu = document.getElementsByClassName("multipage-main")[0];
-let initialMenuHeight = menu.clientHeight;
 let activePage = null
 
 console.log("HELLO")
+
+window.addEventListener("resize", function() {
+	if(activePage != null)
+		menu.style.height = activePage.clientHeight + "px";
+});
 
 function init() {
 	let elems = document.getElementsByClassName("button");

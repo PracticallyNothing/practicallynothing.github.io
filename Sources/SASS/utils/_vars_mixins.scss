@@ -1,10 +1,6 @@
 $bg-1: #323230;
-//$bg-2: #16ce60;
-$bg-3: #10d2f6;
-$bg-4: #ce6016;
-$bg-5: #ce1629;
-$bg-6: #6016ce;
 $bg-2: #06748aff;
+$bg-3: #10d2f6;
 
 @mixin title-setup($color) {
 	background-color: $color;

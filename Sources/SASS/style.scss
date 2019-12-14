@@ -1,16 +1,16 @@
-@import "vars_mixins";
-@import "animations";
-@import "typography";
+@import "utils/vars_mixins";
+@import "utils/animations";
+@import "utils/typography";
+@import "utils/helpers";
 
-@import "header";
-@import "footer";
+@import "generic/header";
+@import "generic/footer";
 
-@import "helpers";
-@import "page_title";
-@import "multipage";
-@import "gallery";
-@import "alternating";
+@import "generic/page_title";
+@import "generic/multipage";
+@import "generic/gallery";
+@import "generic/alternating";
 
-@import "index";
-@import "contact";
+@import "pages/index";
+@import "pages/contact";
 
