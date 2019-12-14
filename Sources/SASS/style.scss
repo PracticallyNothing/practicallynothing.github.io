@@ -269,10 +269,6 @@ body {
 
 .collapsable.section {
 	text-align: center;
-	//font-size: var(--big-font-size);
-	@media screen and (max-width: 800px) {
-		//font-size: calc(var(--big-font-size) - 6pt);
-	}
 	background-color: darken($bg-1, 2.5%);
 
 	color: white;
@@ -339,7 +335,6 @@ footer {
 	background: $bg-1;
 	color: white;
 	text-align: center;
-
 }
 
 @keyframes dissapear-left {
@@ -361,6 +356,7 @@ footer {
 	grid-template-rows: 1fr 1fr;
 
 	.button {
+		border-radius: 25px;
 		display: grid;
 		justify-self: center;
 		align-self: center;
@@ -420,6 +416,8 @@ footer {
 	top: 0px;
 	left: 100%;
 	width: 100vw;
+
+	img { border-radius: 15px; }
 
 	.return-button {
 		cursor: pointer;
@@ -695,6 +693,7 @@ footer {
 			justify-self: center;
 			align-self: center;
 			box-shadow: 3px 3px 5px black;
+			background: darken($bg-2, 15%); 
 		}
 
 		@media screen and (max-width: 1024px) {
@@ -717,7 +716,7 @@ footer {
 
 form {
 	display: grid;
-	background: $bg-3;
+	background: darken($bg-3, 15%);
 	grid-template-columns: 80vw;
 	grid-row-gap: 20px;
 	justify-content: center;

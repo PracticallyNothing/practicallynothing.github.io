@@ -447,6 +447,7 @@ footer p {
   grid-template-rows: 1fr 1fr;
 }
 .menu .button {
+  border-radius: 25px;
   display: grid;
   justify-self: center;
   align-self: center;
@@ -492,6 +493,9 @@ footer p {
   top: 0px;
   left: 100%;
   width: 100vw;
+}
+.portfolio-page img {
+  border-radius: 15px;
 }
 .portfolio-page .return-button {
   cursor: pointer;
@@ -812,6 +816,7 @@ footer p {
   justify-self: center;
   align-self: center;
   box-shadow: 3px 3px 5px black;
+  background: #0f8940;
 }
 @media screen and (max-width: 1024px) {
   .contact-location div {
@@ -828,7 +833,7 @@ footer p {
 
 form {
   display: grid;
-  background: #10d2f6;
+  background: #0798b3;
   grid-template-columns: 80vw;
   grid-row-gap: 20px;
   justify-content: center;
