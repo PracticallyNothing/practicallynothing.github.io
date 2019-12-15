@@ -111,14 +111,6 @@ div.under-header {
     transform: translateY(0%);
   }
 }
-@keyframes slide-up {
-  from {
-    transform: translateY(0%);
-  }
-  to {
-    transform: translateY(-100%);
-  }
-}
 header.mobile {
   -webkit-user-select: none;
   /* Safari */
