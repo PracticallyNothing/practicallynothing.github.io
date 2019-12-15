@@ -9,6 +9,9 @@
 	color: white;
 	text-align: center;
 	padding: 20px 0;
+
+	text-shadow: 3px 3px 5px black;
+
 	h1 { 
 		@include unselectable;
 		white-space: nowrap; 
