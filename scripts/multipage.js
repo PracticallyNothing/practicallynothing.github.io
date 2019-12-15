@@ -45,6 +45,9 @@ function init() {
 		history.replaceState({}, "", location.href.split("?")[0])
 		show({id: qsval})
 		setTimeout(resize, 300);
+		setTimeout(resize, 1000);
+		setTimeout(resize, 3000);
+		setTimeout(resize, 5000);
 	}
 }
 
