@@ -647,6 +647,28 @@ footer p {
   background-color: #08adcb;
 }
 
+#page-404 {
+  background-image: url("images/bg.png");
+  background-size: 100% 100%;
+  color: white;
+  display: grid;
+  grid-template-columns: 80vw;
+  grid-template-rows: 1fr 1fr;
+  justify-content: center;
+  align-content: center;
+  text-align: center;
+  text-shadow: 3px 3px 5px black;
+}
+#page-404 h1, #page-404 p {
+  justify-self: center;
+}
+#page-404 h1 {
+  align-self: end;
+}
+#page-404 p {
+  align-self: start;
+}
+
 #intro {
   background-size: 100% 100%;
   background-image: url("images/bg.png");
