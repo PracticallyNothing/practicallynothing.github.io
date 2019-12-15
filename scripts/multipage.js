@@ -1,10 +1,12 @@
 let menu = document.getElementsByClassName("multipage-main")[0];
 let activePage = null
 
-window.addEventListener("resize", function() {
+function resize() {
 	if(activePage != null)
 		menu.style.height = activePage.clientHeight + "px";
-});
+}
+
+window.addEventListener("resize", resize);
 
 const rx = /[\?\&]([\w0-9-]+)=([\w0-9-]+)/g
 function getQSValue(name) {
@@ -42,6 +44,7 @@ function init() {
 	if(qsval != null) {
 		history.replaceState({}, "", location.href.split("?")[0])
 		show({id: qsval})
+		setTimeout(resize, 300);
 	}
 }
 
