@@ -103,6 +103,14 @@ div.under-header {
   min-height: 100vh;
 }
 
+img {
+  transition: 0.25s;
+  border-radius: 15px;
+}
+img:hover {
+  transform: scale(1.05);
+}
+
 @keyframes slide-down {
   from {
     transform: translateY(-100%);
@@ -447,9 +455,6 @@ footer p {
   left: 100%;
   width: 100vw;
 }
-.multipage-page img {
-  border-radius: 15px;
-}
 .multipage-page .return-button {
   cursor: pointer;
   padding: 20px 0;
@@ -536,6 +541,7 @@ footer p {
   display: grid;
   grid-row-gap: 20px;
   grid-column-gap: 20px;
+  max-width: 100%;
 }
 .gallery *, .gallery-5cols *, .gallery-3cols * {
   align-self: center;
@@ -543,12 +549,8 @@ footer p {
 .gallery img, .gallery-5cols img, .gallery-3cols img {
   max-width: 100%;
 }
-.gallery-clickable img {
-  transition: 0.25s;
-  transform: scale(1);
-}
 .gallery-clickable img:hover {
-  transform: scale(1.05);
+  cursor: pointer;
 }
 .gallery-3cols {
   grid-template-columns: 1fr 1fr 1fr;
@@ -755,6 +757,7 @@ footer p {
 }
 #portfolio-demo img {
   justify-self: center;
+  box-shadow: 3px 3px 5px black;
 }
 
 #why-choose-us {
@@ -864,6 +867,42 @@ footer p {
     justify-self: center;
     align-self: center;
   }
+}
+
+#our-clients {
+  background: #06748aff;
+  display: grid;
+  color: white;
+  text-align: center;
+  justify-content: center;
+  padding-bottom: 50px;
+  box-shadow: 0px -3px 5px black inset;
+}
+#our-clients * {
+  justify-self: center;
+}
+#our-clients .gallery-3cols, #our-clients .gallery-5cols {
+  width: 80vw;
+  grid-row-gap: 60px;
+  grid-column-gap: 60px;
+}
+#our-clients .gallery-3cols div, #our-clients .gallery-5cols div {
+  background: #0798b3;
+  padding: 30px 30px 0 30px;
+  width: 90%;
+  height: 95%;
+  border-radius: 15px;
+  box-shadow: 3px 3px 5px black;
+  transition: 0.25s;
+}
+#our-clients .gallery-3cols div:hover, #our-clients .gallery-5cols div:hover {
+  transform: scale(1.05);
+}
+#our-clients .gallery-3cols div img, #our-clients .gallery-5cols div img {
+  box-shadow: 3px 3px 5px black;
+  background: white;
+  padding: 3px;
+  transition: 0.35s;
 }
 
 .contact-location {

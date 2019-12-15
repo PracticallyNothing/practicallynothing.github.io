@@ -13,3 +13,12 @@ div.under-header { height: 50px; }
 	&-75vh { min-height: 75vh; }
 	&-100vh { min-height: 100vh; }
 }
+
+img {
+	transition: 0.25s;
+	border-radius: 15px;
+
+	&:hover {
+		transform: scale(1.05);
+	}
+}

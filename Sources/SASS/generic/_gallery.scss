@@ -3,17 +3,12 @@
 	display: grid;
 	grid-row-gap: 20px;
 	grid-column-gap: 20px;
+	max-width: 100%;
 	* { align-self: center; }
 	img { max-width: 100%; }
 
-	&-clickable {
-		img { 
-			transition: 0.25s;
-			transform: scale(1); 
-		}
-		img:hover {
-			transform: scale(1.05);
-		}
+	&-clickable img:hover {
+		cursor: pointer;
 	}
 
 	&-3cols {
