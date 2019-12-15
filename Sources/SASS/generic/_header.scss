@@ -140,22 +140,16 @@ header.desktop {
 			margin: 0 5px;
 
 			a {
-				background: lighten(#323230, 5%);
-				font-size: 2em;
-				transition: 0.25s;
+				font-size: 1.7em;
+				transition: 0.05s;
 				padding: 10px;
-				border-radius: 10px;
-				border-bottom: 2px solid gray;
+				border-bottom: 0px solid gray;
 
 				text-decoration: none;
 				color: white;
-				&:hover { 
-					background: darken(#323230, 10%); 
-				}
 
-				&:active {
-					border-bottom: 0px solid gray;
-					border-top: 3px solid gray;
+				&:hover {
+					border-bottom: 3px solid gray;
 				}
 			}
 		}
