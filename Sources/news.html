@@ -1,11 +1,121 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
+	#define SUBTITLE Новини
+	#include "templates/head.html"
 
-    
-    #include "templates/head.html"
+	<body>
+		#include "templates/header.html"
 
-<body>
-    #include "templates/header.html"
-    #include "templates/footer.html"
-</body>
+		<div class="under-header"></div>
+
+		<div id="portfolio-title" class="page-title section">
+			<h1>Новини</h1>
+		</div>
+
+		<div class="multipage-main gallery-3cols">
+			<div id="news1"   class="button"> <p> Xerox Color C75 Press            </p> </div>
+			<div id="news2"   class="button"> <p> Roland SolJet Pro IV XF-640      </p> </div>
+			<div id="news3"   class="button"> <p> Арт Стил - партньори в изложба   </p> </div>
+			<div id="news4"   class="button"> <p> Участие в изложението COPIS     </p> </div> 
+			<div id="news5"   class="button"> <p> Арт Стил ООД - член на БАСГП     </p> </div>
+			<div id="news6"   class="button"> <p> Нови обекти в столицата          </p> </div>
+
+			<!-- -->
+
+			<div id="news1" class="hidden multipage-page">
+				<div onclick="hide()" class="section return-button">
+					<i class="fas fa-arrow-left"></i>
+				</div>
+
+				<div class="gallery-3cols gallery-clickable">
+					
+				</div>
+
+				<div onclick="hide()" class="section return-button">
+					<i class="fas fa-arrow-left"></i>
+				</div>
+			</div>
+
+
+
+			<div id="news2" class="hidden multipage-page">
+				<div onclick="hide()" class="section return-button">
+					<i class="fas fa-arrow-left"></i>
+				</div>
+
+				<div class="gallery-5cols gallery-clickable">
+					
+				</div>
+
+
+				<div onclick="hide()" class="section return-button">
+					<i class="fas fa-arrow-left"></i>
+				</div>
+			</div>
+
+			<div id="news3" class="hidden multipage-page">
+				<div onclick="hide()" class="section return-button">
+					<i class="fas fa-arrow-left"></i>
+				</div>
+
+				<div class="gallery-5cols gallery-clickable">
+					
+
+				</div>
+
+				<div onclick="hide()" class="section return-button">
+					<i class="fas fa-arrow-left"></i>
+				</div>
+			</div>
+
+			<div id="news4" class="hidden multipage-page">
+				<div onclick="hide()" class="section return-button">
+					<i class="fas fa-arrow-left"></i>
+				</div>
+
+				<div class="gallery-5cols gallery-clickable">
+					
+				</div>
+
+				<div onclick="hide()" class="section return-button">
+					<i class="fas fa-arrow-left"></i>
+				</div>
+			</div>
+
+			<div id="news5" class="hidden multipage-page">
+				<div onclick="hide()" class="section return-button">
+					<i class="fas fa-arrow-left"></i>
+				</div>
+
+				<div class="gallery-5cols gallery-clickable">
+					
+
+				</div>
+
+				<div onclick="hide()" class="section return-button">
+					<i class="fas fa-arrow-left"></i>
+				</div>
+			</div>
+
+			<div id="news6" class="hidden multipage-page">
+				<div onclick="hide()" class="section return-button">
+					<i class="fas fa-arrow-left"></i>
+				</div>
+
+				<div class="gallery-5cols gallery-clickable">
+					
+
+				</div>
+
+
+				<div onclick="hide()" class="section return-button">
+					<i class="fas fa-arrow-left"></i>
+				</div>
+			</div>
+		</div>
+
+		#include "templates/footer.html"
+
+		<script src="scripts/multipage.js"></script>
+	</body>
 </html>
