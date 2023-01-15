@@ -77,6 +77,14 @@
 		left: 100%;
 		width: 100vw;
 
+        .article {
+            p {
+                text-align: left;
+                width: 80%;
+                margin: 1.25em auto;
+            }
+        }
+
 		.return-button {
 			cursor: pointer;
 			padding: 20px 0;
