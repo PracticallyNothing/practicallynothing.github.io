@@ -80,9 +80,12 @@
         .article {
             p {
                 text-align: left;
-                width: 88ch;
+                width: min(88ch, 80vw);
                 margin: 0.75em auto;
                 font-size: 2.25em;
+                @media screen and (max-width: 1024px) {
+                    font-size: 1.25em;
+                }
                 // text-indent: 1em;
             }
         }

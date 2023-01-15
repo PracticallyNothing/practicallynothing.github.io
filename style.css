@@ -457,9 +457,14 @@ footer p {
 }
 .multipage-page .article p {
   text-align: left;
-  width: 88ch;
+  width: min(88ch, 80vw);
   margin: 0.75em auto;
   font-size: 2.25em;
+}
+@media screen and (max-width: 1024px) {
+  .multipage-page .article p {
+    font-size: 1.25em;
+  }
 }
 .multipage-page .return-button {
   cursor: pointer;
@@ -553,7 +558,7 @@ footer p {
   align-self: center;
 }
 .gallery img, .gallery-5cols img, .gallery-3cols img {
-  max-width: 100%;
+  max-width: 95%;
 }
 .gallery-clickable img:hover {
   cursor: pointer;
