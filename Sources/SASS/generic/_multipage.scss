@@ -80,8 +80,10 @@
         .article {
             p {
                 text-align: left;
-                width: 80%;
-                margin: 1.25em auto;
+                width: 88ch;
+                margin: 0.75em auto;
+                font-size: 2.25em;
+                // text-indent: 1em;
             }
         }
 
